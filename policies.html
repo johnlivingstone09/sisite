@@ -1,0 +1,379 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRI STONE</title>
+
+
+  <!-- Favicon -->
+<!-- Standard Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+
+<!-- Fallback for Older Browsers -->
+<link rel="shortcut icon" href="image/favicon.ico">
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font (Modern like SpaceX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="policies.css">
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Google Font -->
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script>
+  (function() {
+    emailjs.init("p1LpwogsoxyskriDR"); // Your Public Key
+  })();
+</script>
+
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="image/TSI logo.png" alt="TSI Logo" class="nav-logo-img">
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="service.html" class="nav-link dropdown-toggle">
+            Services <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-link">Web Development</a></li>
+            <li><a href="#" class="dropdown-link">App Development</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      
+     <!-- Contact Button -->
+<div class="contact-button-container">
+  <a id="openPopup" class="contact-button" href="javascript:void(0)">
+    <i class="fas fa-phone"></i> 
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- Popup Form -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <!-- Name -->
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile Number *</label>
+      <div class="mobile-container">
+        <input type="text" id="countryCode" name="countryCode" value="+" maxlength="5" required style="width: 25%;">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" style="width: 70%;">
+      </div>
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+
+      
+      <!-- Mobile Toggle Button -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+
+  
+  
+  
+  <header class="fade-in">
+  <h1 class="page-title">Policies</h1>
+  <div class="company-name">Tri Stone Industries Pvt. Ltd.</div>
+  <div class="last-updated">Last Updated: September 30, 2025</div>
+</header>
+
+
+ <div class="terms-container">
+  <section id="terms-agreement" class="fade-in">
+    <h2>Agreement to Terms</h2>
+    <p>Last updated: <strong>September 30, 2025</strong></p>
+    <p>These Terms & Conditions  govern your access to and use of the website, applications and services provided by Tri Stone Industries Pvt. Ltd.. By accessing or using our website or services you agree to be bound by these Terms. If you do not agree, do not use our services.</p>
+  </section>
+
+  <section id="terms-eligibility" class="fade-in">
+    <h2>Eligibility</h2>
+    <p>You must be legally capable of entering into binding contracts to use our services. If you are using the site on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+  </section>
+
+  <section id="terms-use" class="fade-in">
+    <h2>Permitted Use</h2>
+    <p>You may use the site and services for lawful business or personal purposes. You agree not to:</p>
+    <ul>
+      <li>Use the services for illegal, harmful, abusive or fraudulent activities;</li>
+      <li>Attempt to gain unauthorized access to our systems;</li>
+      <li>Copy, reproduce, republish or distribute content without authorization;</li>
+      <li>Interfere with the normal operation of the Services;</li>
+      <li>Upload or transmit viruses or other malicious code.</li>
+    </ul>
+  </section>
+
+  <section id="terms-intellectual" class="fade-in">
+    <h2>Intellectual Property</h2>
+    <p>All content on the site (text, graphics, logos, images, videos, designs, software) is the property of Tri Stone or its licensors and is protected by copyright, trademark and other intellectual property laws. You may not use our trademarks or logos without prior written consent.</p>
+  </section>
+
+  <section id="terms-user-content" class="fade-in">
+    <h2>User Content & Submissions</h2>
+    <p>If you provide feedback, submissions, or materials (including project specs, designs, code, or ideas), you grant Tri Stone a non-exclusive, worldwide, royalty-free license to use, modify and exploit that content for business purposes. Do not share confidential information unless covered by a separate agreement (e.g., NDA).</p>
+  </section>
+
+  <section id="terms-services" class="fade-in">
+    <h2>Services & Contracts</h2>
+    <p>Services described on the site are subject to separate Statements of Work, proposals and contracts. Those documents define deliverables, timelines, fees and warranties. These Terms apply to interactions on the website and general usage; contractual documents control the relationship for paid services.</p>
+  </section>
+
+  <section id="terms-pricing" class="fade-in">
+    <h2>Pricing & Payment</h2>
+    <p>Fees for services are set out in proposals or contracts. Unless stated otherwise, all payments are due as specified in invoices. We may use third-party payment processors; those providers' terms and privacy policies apply to transactions. Refunds are governed by the contract or our refund policy where applicable.</p>
+  </section>
+
+  <section id="terms-warranty" class="fade-in">
+    <h2>Disclaimer of Warranties</h2>
+    <p>TO THE FULLEST EXTENT PERMITTED BY LAW, THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE". TRI STONE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT AND ANY WARRANTY ARISING FROM COURSE OF DEALING.</p>
+  </section>
+
+  <section id="terms-liability" class="fade-in">
+    <h2>Limitation of Liability</h2>
+    <p>IN NO EVENT WILL TRI STONE BE LIABLE FOR INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATED TO THE SERVICES, EVEN IF ADVISED OF THE POSSIBILITY. OUR AGGREGATE LIABILITY FOR CLAIMS ARISING OUT OF OR RELATED TO THESE TERMS SHALL BE LIMITED TO THE AMOUNTS PAID BY YOU TO TRI STONE UNDER THE APPLICABLE CONTRACT IN THE 12 MONTHS PRECEDING THE CLAIM.</p>
+  </section>
+
+  <section id="terms-confidentiality" class="fade-in">
+    <h2>Confidentiality</h2>
+    <p>Each party will treat as confidential information disclosed by the other that is marked confidential or reasonably understood to be confidential. Confidential information will not be disclosed except as required by law or as permitted by the disclosing party in writing.</p>
+  </section>
+
+  <section id="terms-third-party" class="fade-in">
+    <h2>Third-Party Links & Services</h2>
+    <p>We may provide links to third-party websites and services. We do not control or endorse them and are not responsible for their content or practices.</p>
+  </section>
+
+  <section id="terms-indemnity" class="fade-in">
+    <h2>Indemnification</h2>
+    <p>You agree to indemnify, defend and hold harmless Tri Stone and its officers, directors, employees and agents from and against any claims, losses, liabilities, damages, costs and expenses (including reasonable legal fees) arising from your breach of these Terms or your misuse of the Services.</p>
+  </section>
+
+  <section id="terms-termination" class="fade-in">
+    <h2>Termination</h2>
+    <p>We may suspend or terminate access to the website or services at any time for violation of these Terms or for business reasons. Termination does not affect accrued obligations or liabilities.</p>
+  </section>
+
+  <section id="terms-export" class="fade-in">
+    <h2>Export Controls</h2>
+    <p>Software, technology and services may be subject to export control laws. You agree to comply with applicable export laws and regulations.</p>
+  </section>
+
+  <section id="terms-governing-law" class="fade-in">
+    <h2>Governing Law & Dispute Resolution</h2>
+    <p>These Terms are governed by the laws of India without regard to conflict of law principles. Any dispute arising will be resolved by arbitration in India or through courts as set out in a contract, unless otherwise agreed in writing.</p>
+  </section>
+
+  <section id="terms-changes" class="fade-in">
+    <h2>Changes to Terms</h2>
+    <p>We may modify these Terms from time to time. Where changes are material, we will provide notice. Continued use after changes constitutes acceptance of the revised Terms.</p>
+  </section>
+
+  
+
+  <section id="terms-misc" class="fade-in">
+    <h2>Miscellaneous</h2>
+    <p>If any provision is held invalid, the remaining provisions will remain in effect. These Terms constitute the entire agreement between you and Tri Stone related to the website and Services, unless a written contract says otherwise.</p>
+  </section>
+</div>
+
+  
+  <!-- Footer -->
+  <footer style="background:#fff; color:#000; border-top:2px solid #e5e5e5; width:100%; font-family: Arial, sans-serif;">
+    <!-- Top area -->
+    <div style="padding:40px 60px 10px;">
+      <div style="
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        flex-wrap:wrap; 
+        gap:40px; 
+        width:100%;
+        text-align:left;
+      ">
+
+       <!-- Left Logo Section -->
+     <div style="flex:1; min-width:200px; text-align:center;">
+    <img src="image/TSI logo.png" alt="Tri Stone Logo" style="width:100px; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+    <h2 style="margin:0; font-size:20px; font-weight:bold;">TRI STONE</h2>
+    <p style="margin:0; font-size:16px; color:#555;">Industries</p>
+  </div>
+
+        <!-- 2) Quick Links -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Quick Links</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;"><a href="index.html" style="text-decoration:none; color:#000;">Home</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="about.html" style="text-decoration:none; color:#000;">About</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="blog.html" style="text-decoration:none; color:#000;">stuff</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="careers.html" style="text-decoration:none; color:#000;">Careers</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- 3) Services -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Our Services</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;">Web Development</li>
+            
+            <li style="margin:6px 0; font-weight:300;">App Development</li>
+          </ul>
+        </div>
+
+        <!-- 4) Get in Touch -->
+        <div style="flex:1.3; min-width:260px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Get in Touch</h3>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- phone icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+918072089889" style="text-decoration:none; color:#000;">+91 8072089889</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+917010705106" style="text-decoration:none; color:#000;">+91 7010705106</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- mail icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+           <a href="https://mail.google.com/mail/?view=cm&to=info@tristoneindustries.com" 
+     target="_blank" 
+     style="text-decoration:none; color:#000;">
+     info@tristoneindustries.com
+</a>
+   </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- location icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Tri Stone Industries Pvt. Ltd., Nasha Residence, No: 22 Andal Nagar, Ariyamangalam, Trichy 620010.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  <footer style="background:#ffffff; padding:15px 60px;">
+     <!-- Bottom area -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+  
+  <!-- Copyright (left) -->
+  <p style="margin-left:3%; font-size:16px; color:#000000; text-align:left;">
+    © 2025 Tri Stone Industries. All rights reserved.
+  </p>
+
+  <!-- Center Links -->
+  <div style="text-align:center; font-size:15px; color:#000000;">
+    <a href="terms-conditon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Terms & Condition</a> |
+    <a href="privacy policy.html" style="margin:0 10px; color:#000000; text-decoration:none;">Privacy Policy</a> |
+    <a href="policies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Policies</a>
+  </div>
+
+  <!-- Social (right corner, black & white icons) -->
+  <div style="margin-right: 3%;">
+    <a href="https://www.instagram.com/tristoneindustries?igsh=OGRidmI0eHpqeHZ5" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://www.linkedin.com/company/stoneindustries/" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://wa.me/918072089889" target="_blank" style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+        style="width:22px; height:22px;">
+    </a>
+  </div>
+  </div>
+
+  </footer>
+  </footer>
+
+  <!-- Custom JavaScript -->
+   <script src="script.js"></script>
+  <script src="polices.js"></script>
+
+</body>
+</html>

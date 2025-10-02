@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRI STONE</title>
+
+
+  <!-- Favicon -->
+<!-- Standard Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+
+<!-- Fallback for Older Browsers -->
+<link rel="shortcut icon" href="image/favicon.ico">
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font (Modern like SpaceX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="about.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Google Font -->
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script>
+  (function() {
+    emailjs.init("p1LpwogsoxyskriDR"); // Your Public Key
+  })();
+</script>
+
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="image/TSI logo.png" alt="TSI Logo" class="nav-logo-img">
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link active">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="service.html" class="nav-link dropdown-toggle">
+            Services <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-link">Web Development</a></li>
+            <li><a href="#" class="dropdown-link">App Development</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      
+     <!-- Contact Button -->
+<div class="contact-button-container">
+  <a id="openPopup" class="contact-button" href="javascript:void(0)">
+    <i class="fas fa-phone"></i> 
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- Popup Form -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <!-- Name -->
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile Number *</label>
+      <div class="mobile-container">
+        <input type="text" id="countryCode" name="countryCode" value="+" maxlength="5" required style="width: 25%;">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" style="width: 70%;">
+      </div>
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+
+      
+      <!-- Mobile Toggle Button -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+
+  <!-- About Section -->
+  <section class="about-section">
+        <div class="about-container" id="aboutContainer">
+            <div class="about-image">
+                <img src="image/TSI logo.png" alt="Tristone Industries Logo" class="about-img" id="logoImg">
+            </div>
+            <div class="about-content" id="aboutContent">
+                <h2 class="about-title">Tristone Industries</h2>
+                <p class="about-paragraph">
+                    Tri Stone Industries is a leading provider of software development, robotics, PCB design, and battery & energy solutions. We combine innovation, precision, and technology to deliver custom solutions that help businesses grow. Our dedicated team of experts ensures every project meets the highest standards of quality and efficiency. With a focus on sustainable and reliable solutions, we aim to empower industries worldwide. Discover how Tri Stone Industries can transform your ideas into reality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+ <!-- Four Boxes Section -->
+ <section class="boxes-section">
+        <div class="boxes-wrapper">
+            <div class="boxes-container">
+                <div class="box" data-box="1">
+                    <div class="box-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="box-title">Tech</h3>
+                    <p class="box-description">Cutting-edge technology solutions and innovation</p>
+                </div>
+                
+                <div class="box" data-box="2">
+                    <div class="box-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="box-title">Team</h3>
+                    <p class="box-description">Expert professionals dedicated to excellence</p>
+                </div>
+                
+                <div class="box" data-box="3">
+                    <div class="box-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="box-title">Project</h3>
+                    <p class="box-description">Successful project delivery and management</p>
+                </div>
+                
+                <div class="box" data-box="4">
+                    <div class="box-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="box-title">Policy</h3>
+                    <p class="box-description">Comprehensive policies and best practices</p>
+                </div>
+            </div>
+
+            <!-- Single Global Dropdown -->
+            <div class="global-dropdown" id="globalDropdown">
+                <div class="dropdown-content" id="tech-content">
+                    <h4 class="dropdown-title">Our Technology Excellence</h4>
+                    <p class="dropdown-text">
+                        We specialize in cutting-edge IoT development, creating intelligent web applications, and building robust mobile solutions. Our expertise spans across cloud computing, AI integration, and modern development frameworks. We leverage the latest technologies to deliver scalable, secure, and innovative solutions that drive digital transformation for businesses of all sizes.
+                    </p>
+                </div>
+                
+                <div class="dropdown-content" id="team-content">
+                    <h4 class="dropdown-title">Our Expert Team</h4>
+                    <p class="dropdown-text">
+                        Our diverse team comprises senior developers, creative UI/UX designers, experienced project managers, and dedicated quality assurance specialists. Each member brings years of industry experience and a passion for innovation. We foster a collaborative environment where creativity meets technical expertise, ensuring every project benefits from our collective knowledge and commitment to excellence.
+                    </p>
+                </div>
+                
+                <div class="dropdown-content" id="project-content">
+                    <h4 class="dropdown-title">Project Management Excellence</h4>
+                    <p class="dropdown-text">
+                        We follow agile methodologies to ensure efficient project delivery with transparent communication and regular progress updates. Our systematic approach includes detailed timeline planning, optimal resource allocation, and comprehensive quality control measures. From initial concept to final deployment, we maintain strict adherence to deadlines while delivering solutions that exceed expectations.
+                    </p>
+                </div>
+                
+                <div class="dropdown-content" id="policy-content">
+                    <h4 class="dropdown-title">Our Policy Framework</h4>
+                    <p class="dropdown-text">
+                        We maintain the highest standards of data security and privacy protection, ensuring complete compliance with industry regulations. Our comprehensive policy framework includes stringent quality standards, ethical code of conduct, and transparent business practices. We prioritize client confidentiality, secure data handling, and maintain rigorous compliance with international standards and best practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Clients Section -->
+ <section class="clients-section">
+    <div class="clients-container">
+      <h2 class="clients-title">Clients</h2>
+      <div class="clients-grid">
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/Aditisolar.jpg" alt="Client 1">
+              </div>
+              <h4 class="client-name">Aditi Solar</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Tri Stone’s engineering expertise helped us optimize our solar systems with reliable PCB and IoT integration. Their timely delivery and technical clarity are unmatched."</p>
+                <span class="client-role">CEO & Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/JSW.png" alt="Client 2">
+              </div>
+              <h4 class="client-name">JSW</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"We’ve partnered with Tri Stone for multiple automation solutions. Their team is proactive, innovative, and always ready with practical ideas."</p>
+                <span class="client-role">Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/jascon.jpeg" alt="Client 3">
+              </div>
+              <h4 class="client-name">Jascon Energy</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"As an energy company, we rely on partners who understand power systems deeply. Tri Stone exceeded our expectations with their innovative designs."</p>
+                <span class="client-role">Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/DAIKIN.png" alt="Client 4">
+              </div>
+              <h4 class="client-name">Daikin</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Support we received from Tri Stone ensured our appliances run smoother and more efficiently."</p>
+                <span class="client-role">Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/abm.png" alt="Client 5">
+              </div>
+              <h4 class="client-name">ABM Double Life Batteries</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Our collaboration with Tri Stone on battery has been a game-changer. Their precision and innovation are top-notch."</p>
+                <span class="client-role">Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/Kraitlogo.png" alt="Client 6">
+              </div>
+              <h4 class="client-name">Krait Publishing</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"From digital tools to workflow automation, Tri Stone provided exactly what we needed. Their solutions save us both time and effort."</p>
+                <span class="client-role">Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/blessed.png" alt="Client 7">
+              </div>
+              <h4 class="client-name">Blessed Construction</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Tri Stone supported us with smart energy systems for our construction sites. Cost savings and efficiency have improved drastically."</p>
+                <span class="client-role">Ceo & Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/mecho.png" alt="Client 6">
+              </div>
+              <h4 class="client-name">Mecho</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Top-notch quality and attention to detail. We highly recommend Tristone Industries for any technology project."</p>
+                <span class="client-role">Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/Aqua.png" alt="Client 9">
+              </div>
+              <h4 class="client-name">Aqua</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"The result has been excellent, both in performance and cost savings. and pleasant to work with."</p>
+                <span class="client-role">Tech Lead</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/eswar tech.webp" alt="Client 10">
+              </div>
+              <h4 class="client-name">Eswar Technologies</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Working with Tri Stone is always smooth. They complement our tech needs with robust PCB and embedded design services."</p>
+                <span class="client-role">CEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/microtek.jpg" alt="Client 11">
+              </div>
+              <h4 class="client-name">Microtek</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Tri Stone’s PCB design and embedded solutions enhanced our product reliability. Their technical expertise is rare to find."</p>
+                <span class="client-role">CTO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/Aurum empire.png" alt="Client 12">
+              </div>
+              <h4 class="client-name">Aurum Empire</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Polite, organized, and easy to coordinate with. Their professionalism is commendable."</p>
+                <span class="client-role">Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/avs.png" alt="Client 13">
+      </div>
+      <h4 class="client-name">Avis</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"From software development to IoT solutions, Tri Stone has been a dependable partner. Their attention to detail and professionalism are impressive."</p>
+        <span class="client-role">CEO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/Railway engg works.png" alt="Client 14">
+      </div>
+      <h4 class="client-name">Railway Engineering Works</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Tri Stone systems that have significantly improved our operational safety. A trustworthy and skilled partner."</p>
+        <span class="client-role">Manager</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/paster pure.png" alt="Client 15">
+      </div>
+      <h4 class="client-name">Pasteur Pure</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Professional conduct and timely replies, we felt well supported."</p>
+        <span class="client-role">Director</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/Vante_Noir.png" alt="Client 16">
+      </div>
+      <h4 class="client-name">Vante Noir </h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Tri Stone helped us implement inventory management and digital tracking. Their solution reduced losses and improved customer satisfaction."</p>
+        <span class="client-role">Founder</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/aattukutty.png" alt="Client 17">
+      </div>
+      <h4 class="client-name">Aattukutty</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"The Tri Stone team understood our vision clearly and built a clean, functional, and scalable mobile app. Truly reliable."</p>
+        <span class="client-role">Head of Office</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/phoenix proj.png" alt="Client 18">
+      </div>
+      <h4 class="client-name">Phoenix Projects</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Tri Stone designed for us have increased efficiency across multiple project sites."</p>
+        <span class="client-role">CTO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/srm.png" alt="Client 19">
+      </div>
+      <h4 class="client-name">SRM Institute</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Tri Stone has been instrumental in providing advanced IoT solutions for our labs. Their technical sessions and support were highly valuable for our students."</p>
+        <span class="client-role">HOD</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/indra ghandhi clg.jpg" alt="Client 8">
+              </div>
+              <h4 class="client-name">Srimati Indra Gandhi College</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"We were impressed with Tri Stone’s educational technology solutions. They modernized our student and faculty data management seamlessly."</p>
+                <span class="client-role">Dean</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="client-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="client-logo">
+        <img src="image/national college.png" alt="Client 20">
+      </div>
+      <h4 class="client-name">National College</h4>
+    </div>
+    <div class="card-back">
+      <div class="testimonial-content">
+        <h4>Testimonial</h4>
+        <p>"Engaged and considerate, a very positive experience. Their knowledge and execution stand out in the industry."</p>
+        <span class="client-role">Dean</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="client-logo">
+                <img src="image/national scl.png" alt="Client 1">
+              </div>
+              <h4 class="client-name">National College Hr. Sec. School</h4>
+            </div>
+            <div class="card-back">
+              <div class="testimonial-content">
+                <h4>Testimonial</h4>
+                <p>"Our school management system was developed by Tri Stone. It has made tracking attendance, performance, and communication much easier."</p>
+                <span class="client-role">Head Master</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Extra 8 Clients (13 to 20) -->
+
+
+    
+  </section>
+
+
+
+
+  <!-- From the Founder Section -->
+  <section class="founder-section">
+    <div class="founder-container">
+      <div class="founder-photo-wrap">
+        <img src="image/jls.jpg" alt="Founder portrait">
+      </div>
+      
+      <div class="founder-content">
+        <h2 class="founder-title"><span>From the Founder</span></h2>
+        <h3 class="founder-meta">About the company founder</h3>
+        <p class="founder-text">Our journey began with a vision to innovate and bring meaningful change to the industry.</p>
+        <p class="founder-text">With years of dedication and experience, we have built a foundation based on trust and excellence.</p>
+        <p class="founder-text">Every step we take reflects our commitment to delivering value and staying true to our mission.</p>
+        <p class="founder-text">We invite you to be part of this story as we continue to grow and create impact together.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+<!-- Footer with Pinned Map -->
+  <footer class="footer-map-section">
+    <div class="map-container">
+      <iframe class="map-iframe" src="https://www.google.com/maps?q=10.795639,78.713602&hl=en&z=16&output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+
+  </footer>
+
+
+
+
+  <!-- Footer -->
+  <footer style="background:#fff; color:#000; border-top:2px solid #e5e5e5; width:100%; font-family: Arial, sans-serif;">
+    <!-- Top area -->
+    <div style="padding:40px 60px 10px;">
+      <div style="
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        flex-wrap:wrap; 
+        gap:40px; 
+        width:100%;
+        text-align:left;
+      ">
+
+       <!-- Left Logo Section -->
+     <div style="flex:1; min-width:200px; text-align:center;">
+    <img src="image/TSI logo.png" alt="Tri Stone Logo" style="width:100px; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+    <h2 style="margin:0; font-size:20px; font-weight:bold;">TRI STONE</h2>
+    <p style="margin:0; font-size:16px; color:#555;">Industries</p>
+  </div>
+
+        <!-- 2) Quick Links -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Quick Links</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;"><a href="index.html" style="text-decoration:none; color:#000;">Home</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="about.html" style="text-decoration:none; color:#000;">About</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="blog.html" style="text-decoration:none; color:#000;">stuff</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="careers.html" style="text-decoration:none; color:#000;">Careers</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- 3) Services -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Our Services</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;">Web Development</li>
+            
+            <li style="margin:6px 0; font-weight:300;">App Development</li>
+          </ul>
+        </div>
+
+        <!-- 4) Get in Touch -->
+        <div style="flex:1.3; min-width:260px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Get in Touch</h3>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- phone icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+918072089889" style="text-decoration:none; color:#000;">+91 8072089889</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+917010705106" style="text-decoration:none; color:#000;">+91 7010705106</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- mail icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+           <a href="https://mail.google.com/mail/?view=cm&to=info@tristoneindustries.com" 
+     target="_blank" 
+     style="text-decoration:none; color:#000;">
+     info@tristoneindustries.com
+</a>
+   </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- location icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Tri Stone Industries Pvt. Ltd., Nasha Residence, No: 22 Andal Nagar, Ariyamangalam, Trichy 620010.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  <footer style="background:#ffffff; padding:15px 60px;">
+     <!-- Bottom area -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+  
+  <!-- Copyright (left) -->
+  <p style="margin-left:3%; font-size:16px; color:#000000; text-align:left;">
+    © 2025 Tri Stone Industries. All rights reserved.
+  </p>
+
+  <!-- Center Links -->
+  <div style="text-align:center; font-size:15px; color:#000000;">
+    <a href="terms-conditon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Terms & Condition</a> |
+    <a href="privacy policy.html" style="margin:0 10px; color:#000000; text-decoration:none;">Privacy Policy</a> |
+    <a href="policies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Policies</a>
+  </div>
+
+  <!-- Social (right corner, black & white icons) -->
+  <div style="margin-right: 3%;">
+    <a href="https://www.instagram.com/tristoneindustries?igsh=OGRidmI0eHpqeHZ5" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://www.linkedin.com/company/stoneindustries/" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://wa.me/918072089889" target="_blank" style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+        style="width:22px; height:22px;">
+    </a>
+  </div>
+  </div>
+
+  </footer>
+  </footer>
+
+  <!-- Custom JavaScript -->
+   <script src="script.js"></script>
+  <script src="about.js"></script>
+
+</body>
+</html>
