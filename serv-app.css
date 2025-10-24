@@ -1,0 +1,719 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    overflow-x: hidden;
+}
+
+.text-container {
+    max-width: 1430px;
+    margin: 0 26px;
+    padding: 0 0px 0 0px;
+}
+
+/* Hero Section */
+
+.heros-section {
+    min-height: 24vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.heros-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: black !important;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.heros-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #333, #666, #333);
+    transition: width 0.5s ease;
+}
+
+.heros-title:hover {
+    transform: scale(1.05);
+    letter-spacing: 2px;
+    color: black !important;
+}
+
+.heros-title:hover::after {
+    width: 100%;
+}
+
+/*mobile animation*/
+
+.mobile-animation-wrapper {
+    position: relative;
+    background: transparent;
+    padding: 60px 0;
+    margin: 80px 0;
+}
+
+/* Animation Container */
+
+.animation-container {
+    height: 1000vh; /* Increased for slower scroll */
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.frame-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     background: radial-gradient(circle at center, #17888b 0%, #000000 80%);
+    overflow: hidden;
+    padding: 40px 20px;
+    
+}
+
+/* Device Frame - Responsive with transition */
+.device-frame {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 0.15s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 25px 70px rgba(0, 0, 0, 0.4));
+}
+
+/* Scroll to Explore - Positioned at top of animation */
+.scroll-prompt {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+    animation: fadeInOut 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.scroll-prompt-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.scroll-arrow::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes scrollWheel {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 28px; opacity: 0; }
+}
+
+/* Desktop - Full screen images */
+@media (min-width: 1024px) {
+    .device-frame {
+        max-width: 70vw;
+        max-height: 78vh;
+    }
+    
+    .mobile-animation-wrapper {
+        padding: 502px 0 0;
+        margin: 0px 0;
+    }
+    
+    .frame-wrapper {
+        padding: 60px 40px;
+    }
+}
+
+/* Tablet - Adjusted size */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .device-frame {
+        max-width: 75vw;
+        max-height: 80vh;
+    }
+    
+    .mobile-animation-wrapper {
+        padding: 60px 0;
+        margin: 60px 0;
+    }
+    
+    .frame-wrapper {
+        padding: 40px 30px;
+    }
+}
+
+/* Mobile - Optimized size */
+@media (max-width: 767px) {
+    .device-frame {
+        max-width: 90vw;
+        max-height: 75vh;
+    }
+    
+    .mobile-animation-wrapper {
+        padding: 356px 0 0;
+        margin: 50px 0;
+    }
+    
+    .frame-wrapper {
+        padding: 30px 15px;
+    }
+    
+    .scroll-prompt {
+        top: 10px;
+    }
+    
+    .scroll-prompt-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-prompt-text {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .scroll-arrow {
+        width: 25px;
+        height: 45px;
+    }
+}
+
+/* Ensure white background sections are not affected */
+.hero-section,
+.serviceform,
+footer {
+    position: relative;
+    z-index: 10;
+    background: #ffffff !important;
+}
+
+
+
+/*feature  animation*/
+
+       
+/* Feature Animation Section - Add this to serv-app.css */
+
+.feature-scroll-section * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.feature-scroll-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* prevents background scroll while pinned */
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a, #3a3a3a);
+
+}
+
+/* Fixed background layer - completely separate from content */
+.feature-scroll-section::before {
+    content: '';
+    position: fixed; /* fixed so background is static while pinned */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ensure content sits above background */
+.feature-scroll-title,
+.feature-scroll-container,
+.feature-scroll-indicator {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-scroll-title {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.feature-scroll-container {
+    display:flex;
+    flex-direction: row;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    overflow: visible;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.feature-content-item {
+    min-width: 270px;
+    width: 270px;
+    height: 200px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    will-change: transform, opacity;
+}
+
+.feature-content-item:hover {
+    transform: scale(1.05) translateX(0);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+/* visible state (optional fallback if JS disabled) */
+.feature-content-item.feature-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-content-item.feature-visible:hover {
+    transform: scale(1.05) translateX(0);
+}
+
+.feature-content-item h3 {
+    font-size: 1.6rem;
+    color: #667eea;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.feature-content-item p {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* indicator styling (optional) */
+.feature-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* Tablet - 768px to 1024px - 2 boxes per row */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .feature-scroll-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    .feature-scroll-container {
+        gap: 20px;
+        padding: 0 30px;
+        max-width: 100%;
+        justify-content: center;
+    }
+    .feature-content-item {
+        min-width: calc(50% - 20px);
+        width: calc(50% - 20px);
+        max-width: 350px;
+        height: 180px;
+        padding: 30px;
+    }
+    .feature-content-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    .feature-content-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Mobile - below 768px - 1 box per row */
+@media (max-width: 768px) {
+    .feature-scroll-section {
+        padding: 50px 20px;
+    }
+    
+    .feature-scroll-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+    
+    .feature-scroll-container {
+        gap: 20px;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-content-item {
+        min-width: 100%;
+        width: 100%;
+        max-width: 400px;
+        height: 160px;
+        padding: 25px;
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    
+    .feature-content-item.feature-visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .feature-content-item.feature-visible:hover {
+        transform: scale(1.02) translateY(0);
+    }
+    
+    .feature-content-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-content-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Small Mobile - below 480px */
+@media (max-width: 480px) {
+    .feature-scroll-section {
+        padding: 40px 15px;
+    }
+
+    .feature-scroll-title {
+        font-size: 1.7rem;
+        margin-bottom: 35px;
+    }
+
+    .feature-scroll-container {
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .feature-content-item {
+        height: 150px;
+        padding: 20px;
+    }
+    
+    .feature-content-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .feature-content-item p {
+        font-size: 0.85rem;
+    }
+    
+    .feature-scroll-indicator {
+        font-size: 0.85rem;
+        bottom: 20px;
+    }
+}
+
+/* Extra Small Mobile - below 400px */
+@media (max-width: 400px) {
+    .feature-scroll-container {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .feature-content-item {
+        height: 140px;
+        padding: 18px;
+    }
+    
+    .feature-content-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-content-item p {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+ /* contact form*/
+
+.serviceform {
+  background: #ffffff;
+  padding: 40px 20px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.service-contact-container {
+  max-width: 420px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #f3f5f9, #8b8c8d);
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-contact-container h3 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-align: center;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service-contact-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+}
+
+.service-contact-container input[type="text"],
+.service-contact-container input[type="email"],
+.service-contact-container input[type="tel"],
+.service-contact-container textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #dcdfe4;
+  font-size: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.service-contact-container input:focus,
+.service-contact-container textarea:focus {
+  background: #fff;
+  border-color: #00b4ff;
+  box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.2);
+  outline: none;
+}
+
+.service-submit-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.service-submit-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 150, 255, 0.3);
+}
+
+#serviceFormStatus {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: #00c851;
+}
+
+/* 📱 Country code + number container */
+.mobile-input-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#country-code {
+  width: 22%;
+  text-align: center;
+  background: linear-gradient(145deg, #f5f7fa, #e8ebf0);
+  color: #333;
+  border-radius: 6px;
+  border: 1px solid #dcdfe4;
+  padding: 12px 0;
+  font-size: 1rem;
+}
+
+#service-mobile {
+  width: 78%;
+}
+
+
+
+/* FEATURE: pinned horizontal cards (scoped background, does NOT affect other sections) */
+.feature-pin {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;         /* prevent page jump while pinned */
+  isolation: isolate;       /* scope stacking context */
+}
+
+/* Scoped static background: hidden by default and enabled when section is active */
+.feature-pin::before {
+  content: '';
+  position: fixed;          /* fixed so background looks static while section is pinned */
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(135deg, #000000 0%, #020202 100%); /* unique color for this section */
+}
+
+/* when ScrollTrigger activates the section we add .is-active (JS toggles it) */
+.feature-pin.is-active::before {
+  opacity: 1;
+}
+
+/* content above background */
+.feature-pin .feature-scroll-title,
+.feature-pin .feature-track-wrap,
+.feature-pin .feature-scroll-indicator {
+  position: relative;
+  z-index: 5;
+  color: #fff;
+}
+
+/* track wrapper & track */
+.feature-track-wrap {
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-track {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  padding: 0 50vw;    /* allow first/last card to be centered in viewport */
+  box-sizing: content-box;
+  will-change: transform;
+}
+
+/* cards */
+.feature-card {
+  flex: 0 0 420px;
+  max-width: 86vw;
+  height: 52vh;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(2,6,23,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(40px) scale(0.98);
+  will-change: transform, opacity;
+}
+
+/* indicator */
+.feature-scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  z-index: 6;
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .feature-card { flex: 0 0 360px; height: 50vh; }
+  .feature-track { padding: 0 45vw; gap: 22px; }
+}
+
+@media (max-width: 768px) {
+  .feature-card { flex: 0 0 84vw; height: 48vh; }
+  .feature-track { padding: 0 50vw; gap: 18px; }
+  .feature-scroll-title { margin-bottom: 12px; }
+}

@@ -1,0 +1,102 @@
+/* Fade-in animation already defined */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #8B4513; /* brown */
+  text-align: center;
+}
+
+.company-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.last-updated {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Terms & Conditions Container */
+.terms-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #4B2E2E; /* Dark Brown text */
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  text-align: justify; /* paragraphs and lists will flow left to right */
+}
+
+/* Centered headings */
+.terms-container h2 {
+  color: #8B4513; /* Brown headings */
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #D2A679; /* light brown underline */
+  padding-bottom: 6px;
+  text-align: center; /* heading centered */
+}
+
+.terms-container p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  text-align: justify; /* content left-to-right */
+}
+
+.terms-container ul, .terms-container ol {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  text-align: left; /* keep lists left aligned */
+}
+
+.terms-container li {
+  margin-bottom: 10px;
+}
+
+.terms-container a {
+  color: #8B4513;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms-container a:hover {
+  color: #A0522D; /* lighter brown */
+  text-decoration: underline;
+}
+
+/* Fade-in / Slide-up Animations */
+.fade-in, .slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-container {
+    padding: 0 15px;
+  }
+  .terms-container h2 {
+    font-size: 20px;
+  }
+  .terms-container ul, .terms-container ol {
+    margin-left: 20px;
+  }
+}

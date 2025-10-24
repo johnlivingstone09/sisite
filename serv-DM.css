@@ -1,0 +1,747 @@
+ .phone-mockup {
+  animation: floatMockup 2.5s ease-in-out infinite alternate;
+}
+
+.phone-container {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: #bfbfbf;
+  border-radius: 40px;
+  border: 6px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.digital-marketing{
+  opacity:80%;
+}
+
+         /* Header Section */
+        
+        .hero-section1 {
+    min-height: 24vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.hero-title1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(6, 6, 6) !important;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.hero-title1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #786666, #666, #333);
+    transition: width 0.5s ease;
+}
+
+.hero-title1:hover {
+    transform: scale(1.05);
+    letter-spacing: 2px;
+    color: rgb(15, 15, 15) !important;
+}
+
+.hero-title1:hover::after {
+    width: 100%;
+}
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf8f8;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section with Animation */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      position: relative;
+      background: linear-gradient(135deg, #5f5d5d 0%, #525151 100%);
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text {
+      z-index: 2;
+      color: black;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #090909 0%, #010101 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+      
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: whi;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .hero-animation {
+      position: relative;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+   
+    
+
+    @keyframes tap {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Stats Section */
+    .stats-section {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #5f5d5d 0%, #525151 100%);
+      
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      border: 1px solid #333;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-10px);
+      border-color: #666;
+    }
+
+    .stat-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fdfafa;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Flip Cards Section */
+    .flip-section {
+      padding: 100px 20px;
+      background: white;
+    }
+
+    .flip-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      background: rgb(255, 255, 255);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .flip-container-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .flip-card {
+      height: 450px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #333;
+    }
+
+    .flip-card-front {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front i {
+      font-size: 4rem;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .flip-card-front h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .flip-card-front p {
+      color: #fdfcfc;
+      text-align: center;
+    }
+
+    .flip-card-back h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .flip-card-back ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    .flip-card-back li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ece4e4;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+    }
+
+    .flip-card-back li i {
+      margin-right: 10px;
+      color: #fff;
+    }
+
+    /* Calculator Section */
+    .calculator-section {
+      padding: 100px 20px;
+      background:white;
+    }
+
+    .calculator-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      padding: 60px;
+      border-radius: 30px;
+      border: 1px solid #333;
+    }
+
+    .calculator-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    .calc-input-group {
+      margin-bottom: 40px;
+    }
+
+    .calc-label {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      display: block;
+      color: #ccc;
+    }
+
+    .calc-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .calc-input {
+      flex: 1;
+      background: #0a0a0a;
+      border: 1px solid #333;
+      padding: 15px 20px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 8px;
+      background: #333;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .calc-output {
+      background: #0a0a0a;
+      border: 2px solid #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      text-align: center;
+      border-left: 4px solid #fff;
+    }
+
+    .quote-box p {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 100px 20px;
+      background: white;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #5f5d5d;
+      padding: 60px;
+      border-radius: 30px;
+      border: 1px solid #333;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px;
+      background: white;
+      border: 1px solid #333;
+      border-radius: 10px;
+      color:black;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      background: #e0e0e0;
+      transform: translateY(-2px);
+    }
+
+    /* Order Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      margin: 10% auto;
+      padding: 40px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      animation: slideUp 0.3s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-content h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .close-modal {
+      float: right;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .close-modal:hover {
+      color: #999;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+
+      .flip-container-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator-container,
+      .form-container {
+        padding: 30px;
+      }
+    }
+  
+
+
+
+    /* Container Setup */
+.container-first {
+  width: 100%;
+  padding: 60px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT SIDE */
+.content-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.explanation p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RIGHT PHONE MOCKUP SIDE */
+.phone-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-mockup {
+  position: relative;
+  width: 260px;
+  height: 520px;
+  background: #000;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.phone-notch {
+  width: 60%;
+  height: 30px;
+  background: #111;
+  border-radius: 0 0 20px 20px;
+  margin: 0 auto;
+}
+
+.phone-screen video {
+
+  object-fit: cover;
+  height: inherit;
+}
+
+.phone-book-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #494747;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  
+  transition: 0.3s ease;
+}
+
+.phone-book-btn:hover {
+  background: #0056b3;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .main-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-side,
+  .phone-side {
+    flex: none;
+    width: 100%;
+  }
+
+  .header-section h1 {
+    font-size: 2rem;
+  }
+
+  .phone-mockup {
+    margin-top: 30px;
+    width: 220px;
+    height: 460px;
+  }
+}
+
+  /* Basic Page Style */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+  }
+
+  /* Contact Button */
+  #contactBtn {
+    background: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #contactBtn:hover {
+    background: #0056b3;
+  }
+
+  /* Overlay Background */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Popup Box */
+  .popup-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+
+  /* Form Styles */
+  .popup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .popup-box input, 
+  .popup-box select,
+  .popup-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  .popup-box button {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .popup-box button:hover {
+    background: #0056b3;
+  }

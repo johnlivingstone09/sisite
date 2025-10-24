@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRI STONE</title>
+
+
+  <!-- Favicon -->
+<!-- Standard Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+
+<!-- Fallback for Older Browsers -->
+<link rel="shortcut icon" href="image/favicon.ico">
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font (Modern like SpaceX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="serv-sw.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Google Font -->
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script>
+  (function() {
+    emailjs.init("p1LpwogsoxyskriDR"); // Your Public Key
+  })();
+</script>
+
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="image/TSI logo.png" alt="TSI Logo" class="nav-logo-img">
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link ">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="service.html" class="nav-link dropdown-toggle active">
+            Services <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+          <li><a href="serv-web.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="serv-app.html" class="dropdown-link">App Development</a></li>
+            <li><a href="serv-DM.html" class="dropdown-link">Digital Marketing</a></li>
+            <li><a href="serv-sw.html" class="dropdown-link">Software Development</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      
+     <!-- Contact Button -->
+<div class="contact-button-container">
+  <a id="openPopup" class="contact-button" href="javascript:void(0)">
+    <i class="fas fa-phone"></i> 
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- Popup Form -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <!-- Name -->
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile Number *</label>
+      <div class="mobile-container">
+        <input type="text" id="countryCode" name="countryCode" value="+" maxlength="5" required style="width: 25%;">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" style="width: 70%;">
+      </div>
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+
+      
+      <!-- Mobile Toggle Button -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+
+  <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Software Development</h1>
+    </div>
+
+    <!-- ERP Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">ERP</h2>
+            <p class="service-fullform">Enterprise Resource Planning</p>
+            <p class="service-desc">
+                Our ERP systems streamline operations across finance, human resources, manufacturing, supply chain, and customer relationship management. By centralizing data and automating workflows, we help businesses enhance productivity, reduce operational costs, and make data-driven decisions that drive growth and competitiveness in today's dynamic market.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/erp.png" alt="ERP System Dashboard">
+        </div>
+    </div>
+
+    <!-- Database Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">Database Management</h2>
+            <p class="service-fullform">Structured Data Storage & Retrieval Systems</p>
+            <p class="service-desc">
+                Our database management solutions provide robust, scalable, and secure infrastructure for storing, organizing, and retrieving your critical business data. We design and implement high-performance database architectures that ensure data integrity, optimize query performance, and support seamless scalability. From relational databases to NoSQL solutions, we deliver customized data management systems that power your applications and enable real-time analytics for informed business intelligence.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/database.png" alt="Database Management">
+        </div>
+    </div>
+
+    <!-- CRM Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">CRM</h2>
+            <p class="service-fullform">Customer Relationship Management</p>
+            <p class="service-desc">
+                Our CRM solutions centralize customer data, track interactions, and automate sales and marketing processes. By providing a 360-degree view of customer journeys, we enable businesses to personalize communication, improve customer satisfaction, increase retention rates, and drive revenue growth through targeted engagement strategies and efficient lead management.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/crm.png" alt="CRM System">
+        </div>
+    </div>
+
+    <!-- HRMS Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">HRMS</h2>
+            <p class="service-fullform">Human Resource Management System</p>
+            <p class="service-desc">
+                Our HRMS solutions help organizations manage their workforce efficiently by digitizing employee records, automating attendance tracking, simplifying leave management, and facilitating performance evaluations. By reducing administrative burden and improving HR workflow efficiency, we enable HR teams to focus on strategic initiatives that enhance employee engagement and organizational culture.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/hrms.png" alt="HRMS System">
+        </div>
+    </div>
+
+    <!-- SCM Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">SCM</h2>
+            <p class="service-fullform">Supply Chain Management</p>
+            <p class="service-desc">
+                Our SCM solutions provide end-to-end visibility across procurement, inventory management, logistics, and distribution networks. By leveraging real-time data and predictive analytics, we help businesses minimize costs, reduce lead times, improve supplier relationships, and enhance overall supply chain resilience to meet customer demands efficiently and effectively.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/scm.png" alt="Supply Chain Management">
+        </div>
+    </div>
+
+    <!-- CMS Section -->
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">CMS</h2>
+            <p class="service-fullform">Content Management System</p>
+            <p class="service-desc">
+                Our CMS solutions provide intuitive interfaces for content creation, version control, and multi-channel publishing. Whether you need a corporate website, e-commerce platform, or content portal, we deliver flexible and scalable CMS platforms that enable your team to maintain a dynamic online presence, improve SEO performance, and engage audiences effectively.
+            </p>
+        </div>
+        <div class="service-image">
+            <img src="image/cms.png" alt="Content Management System">
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="text-container">
+            <h2 class="service-heading">Custom made Softwares</h2>
+            
+        </div>
+        
+    </div>
+
+    
+    <!-- Fixed Black Background Zoom Section -->
+    <div class="progress-bar"></div>
+    
+
+    
+
+    <div class="scroll-container">
+        <div class="sticky-wrapper">
+            <div class="grid-background"></div>
+            <div class="panels-wrapper">
+                
+                <div class="service-panel" data-index="0">
+                    <div class="panel-content">
+                        <div class="service-icon">📚</div>
+                        <h2 class="service-title">Learning Management System</h2>
+                        <p class="service-description">Comprehensive platform for course management, student tracking, and interactive learning experiences.</p>
+                        <div class="service-tags">
+                            <span class="tag">Course Creation</span>
+                            <span class="tag">Online Exams</span>
+                            <span class="tag">Progress Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-panel" data-index="1">
+                    <div class="panel-content">
+                        <div class="service-icon">📦</div>
+                        <h2 class="service-title">Custom Inventory Management</h2>
+                        <p class="service-description">Tailored inventory solutions for real-time stock tracking, automated reordering, and supply chain optimization.</p>
+                        <div class="service-tags">
+                            <span class="tag">Stock Control</span>
+                            <span class="tag">Barcode Scanning</span>
+                            <span class="tag">Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-panel" data-index="2">
+                    <div class="panel-content">
+                        <div class="service-icon">🛒</div>
+                        <h2 class="service-title">Point of Sale System</h2>
+                        <p class="service-description">Modern POS solution with payment processing, inventory sync, and customer management capabilities.</p>
+                        <div class="service-tags">
+                            <span class="tag">Payment Gateway</span>
+                            <span class="tag">Invoice Generation</span>
+                            <span class="tag">Sales Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-panel" data-index="3">
+                    <div class="panel-content">
+                        <div class="service-icon">⚙️</div>
+                        <h2 class="service-title">Workflow Automation Tool</h2>
+                        <p class="service-description">Streamline business processes with intelligent automation, task management, and seamless integrations.</p>
+                        <div class="service-tags">
+                            <span class="tag">Task Scheduling</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Notifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-panel" data-index="4">
+                    <div class="panel-content">
+                        <div class="service-icon">✅</div>
+                        <h2 class="service-title">Quality Control & Inspection</h2>
+                        <p class="service-description">Ensure product excellence with digital inspection workflows, defect tracking, and compliance reporting.</p>
+                        <div class="service-tags">
+                            <span class="tag">Inspection Checklists</span>
+                            <span class="tag">Defect Tracking</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-panel" data-index="5">
+                    <div class="panel-content">
+                        <div class="service-icon">🎓</div>
+                        <h2 class="service-title">Student Attendance & Fee Management</h2>
+                        <p class="service-description">Complete solution for tracking attendance, managing fee payments, and generating detailed reports.</p>
+                        <div class="service-tags">
+                            <span class="tag">Biometric Integration</span>
+                            <span class="tag">Fee Collection</span>
+                            <span class="tag">Parent Portal</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ <br><br>
+
+    
+
+     <div class="container">
+        <h1 class="main-title">Work Flow</h1>
+        
+        <div class="workflow-container" id="workflowView">
+            <!-- Phase 1: Requirement Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase1')">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">Requirement Phase</div>
+                    <div class="phase-team">BSA Team</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 180 0 Q 180 40, 20 80" class="connector-path" marker-end="url(#arrowhead1)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 180 0 Q 180 40, 20 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 2: Planning Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase2')">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">Planning Phase</div>
+                    <div class="phase-team">Project Manager, Tech Team</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 20 0 Q 20 40, 180 80" class="connector-path" marker-end="url(#arrowhead2)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 20 0 Q 20 40, 180 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 3: Design Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase3')">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">Design Phase</div>
+                    <div class="phase-team">UI/UX Team, DBA (Database Architect), System Architecture</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 180 0 Q 180 40, 20 80" class="connector-path" marker-end="url(#arrowhead3)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 180 0 Q 180 40, 20 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 4: Development Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase4')">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">Development Phase</div>
+                    <div class="phase-team">Frontend Development, Backend Development, Database Engineer, BSA Support</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 20 0 Q 20 40, 180 80" class="connector-path" marker-end="url(#arrowhead4)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 20 0 Q 20 40, 180 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 5: QA and Testing Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase5')">
+                    <div class="phase-number">5</div>
+                    <div class="phase-title">QA and Testing Phase</div>
+                    <div class="phase-team">QA Team</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead5" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 180 0 Q 180 40, 20 80" class="connector-path" marker-end="url(#arrowhead5)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 180 0 Q 180 40, 20 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 6: Deployment Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase6')">
+                    <div class="phase-number">6</div>
+                    <div class="phase-title">Deployment Phase</div>
+                    <div class="phase-team">DevOps Team, Final Review</div>
+                </div>
+                <div class="curved-connector">
+                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrowhead6" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" class="arrow-marker" />
+                            </marker>
+                        </defs>
+                        <path d="M 20 0 Q 20 40, 180 80" class="connector-path" marker-end="url(#arrowhead6)" />
+                        <circle r="3" class="flow-circle">
+                            <animateMotion dur="3s" repeatCount="indefinite" path="M 20 0 Q 20 40, 180 80" />
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Phase 7: Maintenance & Support Phase -->
+            <div class="phase-wrapper">
+                <div class="phase-card" onclick="showDetail('phase7')">
+                    <div class="phase-number">7</div>
+                    <div class="phase-title">Maintenance & Support Phase</div>
+                    <div class="phase-team">Support Team, BSA Involvement</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Views for Each Phase -->
+        
+        <!-- Phase 1 Detail -->
+        <div class="detail-view" id="phase1">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Requirement Phase</div>
+                <div class="detail-team">BSA Team</div>
+                
+                <div class="detail-paragraph">
+                    The Requirement Phase serves as the critical foundation for any successful software development project. During this phase, the Business Systems Analyst (BSA) team works closely with stakeholders to understand their business objectives, pain points, and desired outcomes. This collaborative approach ensures that every aspect of the client's needs is captured accurately and translated into clear, actionable requirements.
+                </div>
+                <div class="detail-paragraph">
+                    Through comprehensive interviews, workshops, and documentation reviews, the BSA team creates a detailed roadmap of functional and non-functional requirements. This phase establishes the project scope, identifies potential risks, and sets realistic expectations for all stakeholders. The thoroughness of this phase directly impacts the success of subsequent development stages, making it an indispensable component of the software development lifecycle.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Conduct stakeholder interviews and requirement gathering sessions to understand business needs and objectives</li>
+                        <li>Document comprehensive functional and non-functional requirements in Business Requirement Documents (BRD)</li>
+                        <li>Perform feasibility analysis to assess technical, operational, and financial viability of the project</li>
+                        <li>Define clear project scope boundaries and create requirement traceability matrix for tracking</li>
+                        <li>Identify and document potential risks, dependencies, and constraints that may impact project delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2 Detail -->
+        <div class="detail-view" id="phase2">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Planning Phase</div>
+                <div class="detail-team">Project Manager, Tech Team</div>
+                
+                <div class="detail-paragraph">
+                    The Planning Phase transforms business requirements into a strategic execution roadmap. Led by the Project Manager in collaboration with the technical team, this phase establishes comprehensive project timelines, resource allocations, and risk mitigation strategies. The planning process involves breaking down complex requirements into manageable work packages, estimating effort and duration, and assembling the right team with appropriate skill sets.
+                </div>
+                <div class="detail-paragraph">
+                    This phase also involves selecting the optimal technology stack, defining development methodologies (Agile, Scrum, or Waterfall), and establishing clear communication channels among team members and stakeholders. A well-structured plan serves as a guiding framework throughout the project lifecycle, enabling teams to track progress, manage changes effectively, and ensure timely delivery within budget constraints while maintaining quality standards.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Create detailed project timelines with milestones, dependencies, and critical path analysis for efficient tracking</li>
+                        <li>Allocate resources strategically including developers, designers, and specialists based on project requirements</li>
+                        <li>Develop comprehensive risk management strategies with contingency plans and mitigation approaches</li>
+                        <li>Select appropriate technology stack and define architecture patterns that align with project goals</li>
+                        <li>Establish communication protocols, reporting mechanisms, and governance structure for project oversight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3 Detail -->
+        <div class="detail-view" id="phase3">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Design Phase</div>
+                <div class="detail-team">UI/UX Team, DBA (Database Architect), System Architecture</div>
+                
+                <div class="detail-paragraph">
+                    The Design Phase brings conceptual requirements to life through detailed technical and visual specifications. The UI/UX team crafts intuitive user interfaces and seamless user experiences, ensuring that the application is not only functional but also engaging and accessible. Simultaneously, Database Architects design robust, scalable database schemas that efficiently store and retrieve data while maintaining integrity and performance.
+                </div>
+                <div class="detail-paragraph">
+                    System Architects work on defining the overall application architecture, including component interactions, API structures, security frameworks, and integration patterns. This phase produces comprehensive design documents, wireframes, prototypes, and technical specifications that serve as blueprints for the development team. The quality and completeness of design artifacts directly influence development efficiency and the final product's quality.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Create detailed UI/UX wireframes, mockups, and interactive prototypes with user flow documentation</li>
+                        <li>Design comprehensive database schemas including entity relationships, normalization, and indexing strategies</li>
+                        <li>Develop system architecture diagrams showing component interactions, data flows, and integration points</li>
+                        <li>Define API specifications, endpoint structures, authentication mechanisms, and data exchange formats</li>
+                        <li>Establish design systems with reusable components, style guides, and accessibility compliance standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 4 Detail -->
+        <div class="detail-view" id="phase4">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Development Phase</div>
+                <div class="detail-team">Frontend Development, Backend Development, Database Engineer, BSA Support</div>
+                
+                <div class="detail-paragraph">
+                    The Development Phase represents the core execution stage where designs and specifications transform into functional, working software. Frontend developers build responsive, interactive user interfaces using modern frameworks and technologies, ensuring cross-browser compatibility and optimal performance. Backend developers simultaneously construct robust server-side logic, APIs, and business rule implementations that power the application's functionality.
+                </div>
+                <div class="detail-paragraph">
+                    Database Engineers implement and optimize the database structures, manage data migrations, and ensure data integrity through stored procedures and triggers. Throughout this phase, the BSA team provides continuous support to clarify requirements and validate that implementations align with business objectives. The development process follows coding best practices, includes regular code reviews, implements comprehensive unit testing, and utilizes version control systems to maintain code quality and enable collaborative development.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Develop responsive frontend interfaces with modern frameworks ensuring cross-platform compatibility and performance</li>
+                        <li>Build robust backend APIs and business logic with proper error handling and security implementations</li>
+                        <li>Implement and optimize database structures with efficient queries, indexing, and data integrity constraints</li>
+                        <li>Integrate third-party services, payment gateways, and external APIs following security best practices</li>
+                        <li>Conduct regular code reviews and maintain comprehensive unit test coverage for quality assurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 5 Detail -->
+        <div class="detail-view" id="phase5">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">QA and Testing Phase</div>
+                <div class="detail-team">QA Team</div>
+                
+                <div class="detail-paragraph">
+                    The QA and Testing Phase ensures that the developed application meets all specified requirements and performs flawlessly under various conditions. The QA team develops comprehensive test plans and test cases covering functional, integration, performance, and security aspects. This systematic approach to quality assurance identifies defects early, reduces the cost of fixes, and ensures a superior end-user experience.
+                </div>
+                <div class="detail-paragraph">
+                    Testing encompasses multiple levels including unit testing, integration testing, system testing, and user acceptance testing (UAT). Performance testing evaluates the application's behavior under expected and peak load conditions, while security testing identifies vulnerabilities and ensures data protection. The QA team maintains detailed bug tracking systems, collaborates with developers for timely resolution, and performs regression testing to verify that fixes don't introduce new issues. This rigorous quality assurance process is essential for delivering reliable, production-ready software.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Execute comprehensive functional testing covering all features, workflows, and business logic scenarios</li>
+                        <li>Perform integration testing to verify seamless communication between different system components and modules</li>
+                        <li>Conduct performance and load testing to ensure application stability under various user traffic conditions</li>
+                        <li>Execute security testing including vulnerability assessments, penetration testing, and data protection validation</li>
+                        <li>Coordinate User Acceptance Testing (UAT) with stakeholders and maintain detailed bug tracking and resolution logs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 6 Detail -->
+        <div class="detail-view" id="phase6">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Deployment Phase</div>
+                <div class="detail-team">DevOps Team, Final Review</div>
+                
+                <div class="detail-paragraph">
+                    The Deployment Phase marks the transition from development to production environments, requiring meticulous planning and execution. The DevOps team configures production infrastructure, sets up monitoring systems, and implements automated deployment pipelines to ensure smooth and reliable releases. This phase involves careful coordination to minimize downtime and ensure business continuity during the go-live process.
+                </div>
+                <div class="detail-paragraph">
+                    Prior to deployment, comprehensive final reviews are conducted including security audits, performance benchmarks, and deployment readiness assessments. The team prepares detailed rollback plans to quickly revert changes if issues arise. Post-deployment activities include smoke testing to verify critical functionality, monitoring system health, and providing immediate support to address any emerging issues. User training sessions and documentation handovers ensure that end-users and support teams are prepared to use and maintain the new system effectively.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Configure production environments with proper security measures, scaling capabilities, and backup systems</li>
+                        <li>Execute automated deployment pipelines with zero-downtime strategies and comprehensive health checks</li>
+                        <li>Perform data migration to production with validation checks ensuring data integrity and completeness</li>
+                        <li>Conduct final security audits and performance optimization to ensure production readiness</li>
+                        <li>Deliver user training sessions, technical documentation, and establish post-deployment monitoring and support protocols</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 7 Detail -->
+        <div class="detail-view" id="phase7">
+            <div class="detail-content">
+                <button class="back-button" onclick="hideDetail()">
+                    ← Back to Workflow
+                </button>
+                <div class="detail-title">Maintenance & Support Phase</div>
+                <div class="detail-team">Support Team, BSA Involvement</div>
+                
+                <div class="detail-paragraph">
+                    The Maintenance & Support Phase ensures the long-term success and continuous improvement of the deployed application. The support team provides ongoing monitoring, incident management, and user assistance to maintain optimal system performance and user satisfaction. This phase is crucial for addressing unexpected issues, adapting to changing business needs, and implementing enhancements that add value over time.
+                </div>
+                <div class="detail-paragraph">
+                    Regular system health checks, performance tuning, and security updates keep the application secure and efficient. The BSA team remains involved to evaluate enhancement requests, prioritize feature additions, and ensure that ongoing changes align with evolving business objectives. This phase includes maintaining comprehensive documentation, managing user feedback, implementing bug fixes, and planning for future upgrades. Effective maintenance and support maximize return on investment and ensure that the application continues to deliver business value throughout its lifecycle.
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Key Focus Areas</h3>
+                    <ul>
+                        <li>Provide 24/7 monitoring with automated alerting systems for proactive incident detection and resolution</li>
+                        <li>Manage incident tickets with defined SLAs ensuring timely response and resolution of user issues</li>
+                        <li>Perform regular system maintenance including security patches, performance optimization, and database tuning</li>
+                        <li>Evaluate and implement enhancement requests that align with business priorities and add user value</li>
+                        <li>Maintain up-to-date documentation, knowledge bases, and training materials for users and support staff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <br><br>
+
+
+    <!-- contact-->
+
+  <section class="serviceform">
+  <div class="service-contact-container">
+    <h3>Contact Us</h3>
+
+    <form id="serviceContactForm">
+      <label for="service-name">Name *</label>
+      <input type="text" id="service-name" name="service_user_name" required placeholder="Your Full Name">
+
+      <label for="service-email">Email *</label>
+      <input type="email" id="service-email" name="service_user_email" required placeholder="example@mail.com"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email with '@'">
+
+      <label for="service-mobile">Mobile Number *</label>
+
+      <!-- 📞 Country Code + Number Container -->
+      <div class="mobile-input-container">
+        <input type="text" id="country-code" name="country_code" value="+91" maxlength="5" required>
+        <input type="tel" id="service-mobile" name="service_user_mobile" required
+          placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10"
+          title="Enter a valid 10 digit mobile number">
+      </div>
+
+      <label for="service-message">Message</label>
+      <textarea id="service-message" name="service_user_message" rows="4" placeholder="Your message here..."></textarea>
+
+      <button type="submit" class="service-submit-btn">Submit</button>
+    </form>
+
+    <div id="serviceFormStatus"></div>
+  </div>
+</section> <br>
+
+  
+  <!-- Footer -->
+
+  
+  <footer style="background:#fff; color:#000; border-top:2px solid #e5e5e5; width:100%; font-family: Arial, sans-serif;">
+    <!-- Top area -->
+    <div style="padding:40px 60px 10px;">
+      <div style="
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        flex-wrap:wrap; 
+        gap:40px; 
+        width:100%;
+        text-align:left;">
+
+       <!-- Left Logo Section -->
+     <div style="flex:1; min-width:200px; text-align:center;">
+    <img src="image/TSI logo.png" alt="Tri Stone Logo" style="width:100px; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+    <h2 style="margin:0; font-size:20px; font-weight:bold;">TRI STONE</h2>
+    <p style="margin:0; font-size:16px; color:#555;">Industries</p>
+  </div>
+
+        <!-- 2) Quick Links -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Quick Links</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;"><a href="index.html" style="text-decoration:none; color:#000;">Home</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="about.html" style="text-decoration:none; color:#000;">About</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="blog.html" style="text-decoration:none; color:#000;">stuff</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="careers.html" style="text-decoration:none; color:#000;">Careers</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- 3) Services -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Our Services</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;">Web Development</li>
+            
+            <li style="margin:6px 0; font-weight:300;">App Development</li>
+          </ul>
+        </div>
+
+        <!-- 4) Get in Touch -->
+        <div style="flex:1.3; min-width:260px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Get in Touch</h3>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- phone icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+918072089889" style="text-decoration:none; color:#000;">+91 8072089889</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+917010705106" style="text-decoration:none; color:#000;">+91 7010705106</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- mail icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+           <a href="https://mail.google.com/mail/?view=cm&to=info@tristoneindustries.com" 
+     target="_blank" 
+     style="text-decoration:none; color:#000;">
+     info@tristoneindustries.com
+    </a>
+    </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- location icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Tri Stone Industries Pvt. Ltd., Nasha Residence, No: 22 Andal Nagar, Ariyamangalam, Trichy 620010.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  <footer style="background:#ffffff; padding:15px 60px;">
+    <!-- Bottom area -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+  
+  <!-- Copyright (left) -->
+  <p style="margin-left:3%; font-size:16px; color:#000000; text-align:left;">
+    © 2025 Tri Stone Industries. All rights reserved.
+  </p>
+
+  <!-- Center Links -->
+  <div style="text-align:center; font-size:15px; color:#000000;">
+    <a href="terms-conditon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Terms & Condition</a> |
+    <a href="privacy policy.html" style="margin:0 10px; color:#000000; text-decoration:none;">Privacy Policy</a> |
+    <a href="policies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Policies</a>
+  </div>
+
+  <!-- Social (right corner, black & white icons) -->
+  <div style="margin-right: 3%;">
+    <a href="https://www.instagram.com/tristoneindustries?igsh=OGRidmI0eHpqeHZ5" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://www.linkedin.com/company/stoneindustries/" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://wa.me/918072089889" target="_blank" style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+        style="width:22px; height:22px;">
+    </a>
+  </div>
+
+  </div>
+
+  </footer>
+  
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+  <script src="serv-sw.js"></script>
+  
+
+</body>
+</html>
