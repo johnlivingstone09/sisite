@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - TRI STONE Industries</title>
+  <link rel="stylesheet" href="pay.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div class="payment-page">
+    <div class="payment-header">
+      <div class="container">
+        <div class="payment-header-content">
+          <div class="back-logo" onclick="goBack()" style="cursor: pointer;">← TRI STONE Industries</div>
+          <div class="workshop-logo">IOT Workshop</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-content">
+      <div class="payment-form">
+        <h2>Secure Payment</h2>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+          </div>
+          <button id="rzp-button" class="btn btn-success btn-lg">Pay ₹249</button>
+        </form>
+      </div>
+
+      <div class="program-details">
+        <h3>Program Details</h3>
+        <div class="detail-item">
+          <span class="detail-label">📅 Program Date</span>
+          <span class="detail-value">Oct 05, 2025</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">⏰ Program Time</span>
+          <span class="detail-value">10:00 AM - 1:00 PM IST</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📍 Mode</span>
+          <span class="detail-value">Online Workshop</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">👨‍🎓 Instructor</span>
+          <span class="detail-value">Arduino Expert</span>
+        </div>
+
+        <div class="payment-summary">
+          <h3>Payment Summary</h3>
+          <div class="summary-item">
+            <span>Base Amount</span>
+            <span>₹ 233.9</span>
+          </div>
+          <div class="summary-item">
+            <span>GST</span>
+            <span>₹ 15.1</span>
+          </div>
+          <div class="summary-item total-amount">
+            <span>To Pay</span>
+            <span>₹ 249</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxOUOv0T-Xg_LD_QjLRbTvc3KNS6rlZGQjYwYNCdOED08G7C9uDacjA-iK6wBTX_Pcf/exec"; 
+    const razorpayKey = "rzp_live_RYqP28PF8HeKa5"; // ← your test Razorpay key
+
+    document.getElementById("registrationForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const amount = 249 * 100; // ₹249 in paise
+
+      const options = {
+        "key": razorpayKey,
+        "amount": amount,
+        "currency": "INR",
+        "name": "Tri Stone Industries",
+        "description": "Payment for ₹249 IoT Workshop",
+
+        "handler": function (response) {
+          // Save details to Google Sheet
+          fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              phone: phone,
+              amount: 249,
+              payment_id: response.razorpay_payment_id,
+              status: "Success"
+            })
+          })
+          .then(() => {
+            // Redirect after saving
+            window.location.href = "success.html";
+          })
+          .catch(() => {
+            alert("⚠ Payment successful but failed to save details.");
+            window.location.href = "success.html";
+          });
+        },
+
+        "prefill": {
+          "name": name,
+          "email": email,
+          "contact": phone
+        },
+        "theme": { "color": "#3399cc" }
+      };
+
+      const rzp1 = new Razorpay(options);
+      rzp1.open();
+    });
+  </script>
+</body>
+</html>

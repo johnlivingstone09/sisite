@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | Tri Stone Industries</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #222;
+      background: linear-gradient(135deg, #f9f9f9, #e8f0f7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 15px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .back-top {
+      position: absolute;
+      top: 20px;
+      left: -120px;
+      padding: 8px 18px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .back-top:hover {
+      background: #0078d7;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 900px;
+      width: 90%;
+      background: #ffffffc7;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      padding: 30px 25px;
+      line-height: 1.7;
+      backdrop-filter: blur(4px);
+    }
+
+    h2 {
+      color: #004080;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      padding: 20px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="back-top" onclick="goBack()">← Back</button>
+    <h1>Refund Policy</h1>
+    <p>Tri Stone Industries, Trichy — Software & Hardware Company</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. No Refund Policy</h2>
+      <p>All sales are final. No refund will be provided after registration and payment, under any circumstances. This applies to technical issues, schedule conflicts, or change of mind by the participant.</p>
+
+      <h2>2. Event Cancellation by Company</h2>
+      <p>If Tri Stone Industries cancels or postpones a webinar due to technical or organizational reasons, participants will receive:</p>
+      <ul>
+        <li>A 100% refund, or</li>
+        <li>A credit voucher for the next available webinar (based on participant preference).</li>
+      </ul>
+
+      <h2>3. Transfer Policy</h2>
+      <p>Registrations are non-transferable. You cannot substitute another person in your place after payment.</p>
+    </section>
+  </main>
+
+  <footer>© 2025 Tri Stone Industries, Trichy. All rights reserved.</footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
