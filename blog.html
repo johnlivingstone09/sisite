@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRI STONE</title>
+
+
+  <!-- Favicon -->
+<!-- Standard Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+
+<!-- Fallback for Older Browsers -->
+<link rel="shortcut icon" href="image/favicon.ico">
+
+
+
+              
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font (Modern like SpaceX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Google Font -->
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script>
+  (function() {
+    emailjs.init("p1LpwogsoxyskriDR"); // Your Public Key
+  })();
+</script>
+
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="image/TSI logo.png" alt="TSI Logo" class="nav-logo-img">
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="service.html" class="nav-link dropdown-toggle">
+            Services <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="serv-web.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="serv-app.html" class="dropdown-link">App Development</a></li>
+            <li><a href="serv-DM.html" class="dropdown-link">Digital Marketing</a></li>
+            <li><a href="serv-sw.html" class="dropdown-link">Software Development</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link active">Blog</a>
+        </li>
+      </ul>
+      
+     <!-- Contact Button -->
+<div class="contact-button-container">
+  <a id="openPopup" class="contact-button" href="javascript:void(0)">
+    <i class="fas fa-phone"></i> 
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- Popup Form -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <!-- Name -->
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile Number *</label>
+      <div class="mobile-container">
+        <input type="text" id="countryCode" name="countryCode" value="+" maxlength="5" required style="width: 25%;">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" style="width: 70%;">
+      </div>
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+    
+      
+      <!-- Mobile Toggle Button -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Main Blog Section -->
+    <div id="blogSection" class="blog-section">
+        <div class="blog-container">
+            <h2 class="blog-title">Latest Blog Posts</h2>
+
+            <!-- First Row - Square Boxes -->
+            <div class="blog-row-1">
+        <div class="blog-box-square" onclick="showBlogPage('blog1')">
+          <div class="blog-image-square">
+            <img src="image/blog 1 potr.jpg" alt="Blog 1 Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:1/1;" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-box-title">How Agentic AI is Reinventing Business Processes</h3>
+            <a href="#" class="read-more-btn" onclick="event.stopPropagation(); showBlogPage('blog1')">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-box-square" onclick="showBlogPage('blog2')">
+          <div class="blog-image-square">
+            <img src="image/blog2 potr.jpg" alt="Blog 2 Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:1/1;" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-box-title">Why Every Business Needs Its Own E-Commerce Website in 2025</h3>
+            <a href="#" class="read-more-btn" onclick="event.stopPropagation(); showBlogPage('blog2')">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-box-square" onclick="showBlogPage('blog3')">
+          <div class="blog-image-square">
+            <img src="image/blog 3 potr.jpg" alt="Blog 3 Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:1/1;" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-box-title">Why Your Business Can’t Afford to Ignore a Website in 2025</h3>
+            <a href="#" class="read-more-btn" onclick="event.stopPropagation(); showBlogPage('blog3')">Read More</a>
+          </div>
+        </div>
+            </div>
+
+     
+      </div> 
+<!-- Second Row - Single Featured 16:9 Image (Full Width) -->
+      <!-- close .blog-container before full width image -->
+       
+      <div class="blog-row-2-fullwidth">
+  <div class="blog-box-featured">
+    <div class="blog-image-featured">
+      <img src="image/main blog.jpg" alt="AI Business Blog Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:16/9;" />
+    </div>
+    <a href="#" class="featured-read-more" onclick="showBlogPage('blogmainpage'); event.stopPropagation();">Read More</a>
+  </div>
+</div>
+
+      <div class="blog-container"><!-- reopen for rest of content if needed -->
+        </div>
+      </div>
+       
+
+      
+        
+    
+
+    <!-- Blog Page 1 -->
+    <div id="blog1" class="blog-page">
+  <div class="blog-page-container">
+    <button class="back-btn" onclick="showBlogSection()">← Back to Blogs</button>
+    <div class="blog-page-header">
+      <div class="blog-page-image">
+        <img src="image/blog 1 lands.jpg" alt="Blog 1 Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:16/9;" />
+      </div>
+  <h1 class="blog-page-title" style="text-align:left; margin-left:0;">How Agentic AI is Reinventing Business Processes</h1>
+  <p class="blog-meta" style="text-align:left; margin-left:0;">Published by Tri Stone Industries | 2025</p>
+    </div>
+
+    <div class="blog-page-content">
+      <h2>The Rise of Agentic AI</h2>
+      <p>It’s Monday morning at a manufacturing company. Instead of chaos, the CEO walks into an office that’s already in motion: inventory updated, suppliers notified, maintenance scheduled before breakdowns, and sales reports ready with recommendations.</p>
+
+      <p>This isn’t magic. It’s <strong>Agentic AI</strong>, the next evolution of artificial intelligence that’s reshaping modern business operations.</p>
+
+      <p>According to a <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027">Gartner report on AI agents</a>,  over 30% of enterprises are expected to adopt Agentic AI systems by 2026, proving that this shift is more than a trend, it’s the future.</p>
+
+      <h3>What Makes Agentic AI Different?</h3><br>
+      <p>Unlike traditional AI that only responds or predicts, Agentic AI is:</p>
+      <ul>
+        <li><strong>Autonomous</strong> –  It can act independently to achieve defined goals.</li>
+        <li><strong>Proactive</strong> – Anticipates needs instead of waiting for commands.</li>
+        <li><strong>Multi-step capable</strong> – Executes end-to-end processes without manual oversight.</li>
+      </ul>
+      <p>Think of it less as a tool, and more as a digital colleague who manages workflows, coordinates decisions, and keeps business moving.</p>
+        <br><br>
+      <h2>How Agentic AI is Transforming Business Processes</h2>
+      <ol>
+        <li><strong>Workflow Automation</strong><br>
+         HR teams no longer spend hours onboarding paperwork. Agentic AI automates the process from ID verification to training schedules.</li>
+        <li><strong>Smarter Decisions</strong><br>
+          Business leaders can rely on AI agents to simulate multiple scenarios and recommend the best strategies.</li>
+        <li><strong>Customer Experience</strong><br>
+           Instead of waiting for complaints, AI agents proactively reach out when a customer struggles delivering instant, personalized support.</li>
+        <li><strong>Operations & Supply Chain</strong><br>
+           From predictive maintenance to real-time logistics, agents cut downtime and optimize efficiency across industries.</li>
+      </ol> <br><br>
+
+      <h3>Real-World Applications</h3>
+      <ul>
+        <li><strong>Manufacturing:</strong> Predictive maintenance and supply chain coordination.</li>
+        <li><strong>Healthcare:</strong> Patient monitoring and treatment personalization.</li>
+        <li><strong>Finance:</strong> Autonomous fraud detection and compliance checks.</li>
+        <li><strong>Retail:</strong> Dynamic pricing and real-time inventory updates.</li>
+      </ul>
+  <p>At <strong>Tri Stone Industries’ <a href="service.html">Technology Solutions</a></strong>, we help businesses explore how Agentic AI can streamline workflows and unlock new efficiency.</p>
+
+      <h3>Challenges to Consider</h3>
+      <ul>
+        <li><strong>Data Security</strong> – Strong governance and compliance are non-negotiable.</li>
+        <li><strong>Human Oversight</strong> – AI augments decisions but doesn’t replace human judgment.</li>
+        <li><strong>Scalability & Cost</strong> – Early investment requires a thoughtful strategy.</li>
+      </ul> <br> <br>
+
+      <h2>The Future of Agentic AI in Business</h2>
+      <p>By 2030, companies will no longer “use AI”. They will <strong>run on AI agents</strong>. The organizations that blend <strong>human creativity with autonomous AI systems</strong> will outpace competition, reduce inefficiencies, and discover entirely new business models.</p>
+      <p>Tri Stone Industries is ready to guide this transition, ensuring businesses leverage Agentic AI responsibly and effectively.</p>
+
+      <h2>Conclusion</h2>
+      <p>Agentic AI isn’t about replacing people, it’s about reinventing processes to be faster, smarter, and more adaptive.</p>
+      <p>Ready to explore how<strong> Agentic AI can transform your business processes?</strong></p>
+  <p><a href="javascript:void(0)" class="openPopup">Contact Tri Stone Industries </a> today to start your digital transformation journey.</p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Blog Page 2 -->
+<div id="blog2" class="blog-page">
+  <div class="blog-page-container">
+    <button class="back-btn" onclick="showBlogSection()">← Back to Blogs</button>
+    <div class="blog-page-header">
+      <div class="blog-page-image">
+        <img src="image/blog 2 lands.jpg" alt="E-Commerce Blog Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:16/9;" />
+      </div>
+      <h1 class="blog-page-title" style="text-align:left; margin-left:0;">Why Every Business Needs Its Own E-Commerce Website in 2025</h1>
+      
+    </div>
+
+    <div class="blog-page-content">
+      <p>A staggering number of business owners still believe that having a presence on Amazon, Flipkart, or Instagram shops is “enough” to succeed online. But here’s the reality: <strong>63% of online shoppers say they prefer buying directly from a brand’s own website</strong> because it feels more secure, authentic, and trustworthy.</p>
+
+      <p>That statistic alone tells a powerful story. Marketplaces may give you reach, but they will never give you control. In 2025, owning your own e-commerce website is not just an option, it’s the difference between building a brand and becoming another nameless seller in an endless marketplace.</p>
+
+      <p>At <strong>Tri Stone Industries</strong>,  we have seen countless businesses transform their fortunes simply by investing in their own digital storefront.</p>
+        <br>
+      <h2>Why Marketplaces Can Hold You Back</h2>
+      <p>At first glance, selling on large platforms seems easy. Customers are already there, the setup is quick, and sales might start rolling in. But over time, the cracks begin to show. Your brand name is hidden behind the shadow of the marketplace. Customers remember the platform, not you.</p>
+
+      <p>Every sale comes with a cost, hefty commissions, unpredictable policy changes, and constant price wars with competitors. Worst of all, you never really own the relationship with your customers. The data belongs to the marketplace, and without it, building loyalty or scaling strategically becomes almost impossible.</p>
+        <br>
+      <h2>The True Power of an E-Commerce Website</h2>
+      <p>What feels like an opportunity at first often turns into a trap that limits how far your business can grow.</p>
+      
+      <H2>The True Power of an E-Commerce Website</H2>
+      <P>When you own your website, you own your business story. A well-designed e-commerce site is more than a digital shop, it is your <STRONG> brand’s voice, identity, and most persuasive salesperson.</STRONG></P>
+      <BR>
+        <p>Your website works 24/7 to attract visitors through search engines, turning them into buyers without relying on expensive advertising. It tells your story the way you want it told, showcasing your products with designs tailored to your audience. And because the experience is entirely yours, every customer who visits your site interacts with your brand, not a platform’s logo.</p>
+      <br>
+      <p>The difference is not just visual. Businesses with their own e-commerce websites enjoy higher margins, stronger trust, and the ability to build long-term relationships with customers. The value compounds over time, creating sustainable growth that no rented marketplace can ever deliver.</p>
+      
+        <br><br>
+
+      <h2>A Transformation Story</h2>
+      <p>One of our clients, a mid-sized retail brand, came to us after years of depending on third-party marketplaces. They were frustrated that even after thousands of sales, most of their customers had no idea who they were. Within months of launching their own e-commerce website with us, the change was dramatic.</p>
+       <br>
+      <p>They began receiving orders from cities they had never served before. Their brand name started appearing on Google search results. Repeat purchases doubled, not because of heavy discounts, but because customers now trusted them directly. The difference wasn’t just in sales, it was in recognition, reputation, and long-term business confidence.</p> <br>     
+
+      <h2>The Takeaway for Business Owners</h2>
+      <p>If 2024 was the year of exploring digital opportunities, <strong> 2025 is the year of taking ownership.</strong>Relying solely on marketplaces may give you short-term sales, but it keeps you dependent on someone else’s platform. Building your own e-commerce website gives you freedom, control, and a powerful foundation for growth.</p>
+
+      <p>At <strong>Tri Stone Industries</strong>, we specialize in creating custom-built, SEO-optimized online stores that are designed not just to look professional, but to drive measurable results.</p>
+
+      <p>Your competitors are already moving online with their own branded stores. The question is, will your customers find you or settle for someone else?</p>
+
+      <p><a href="javascript:void(0)" class="openPopup">Get in touch with Tri Stone Industries</a>.today and start building the e-commerce website your business deserves.</p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Blog Page 3 -->
+<div id="blog3" class="blog-page">
+  <div class="blog-page-container">
+    <button class="back-btn" onclick="showBlogSection()">← Back to Blogs</button>
+    <div class="blog-page-header">
+      <div class="blog-page-image">
+        <img src="image/blog 3 lans.jpg" alt="AI Business Blog Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:16/9;" />
+      </div>
+      <h1 class="blog-page-title" style="text-align:left; margin-left:0;">Why Your Business Can’t Afford to Ignore a Website in 2025</h1>
+      <p class="blog-meta" style="text-align:left; margin-left:0;">Published by Tri Stone Industries | 2025</p>
+    </div>
+
+    <div class="blog-page-content">
+      <p>Did you know that <strong>  over 70% of consumers won’t trust a business without a website?</strong> Even more surprising, <strong> 84% of people believe a business with a professional website is more credible than one relying only on social media.</strong> </p>
+
+      <p>Yet, thousands of small and medium businesses still run entirely on word of mouth or social platforms which limit their growth. Here’s the truth:<strong> in today’s digital economy, your website is not just a presence, it’s your most powerful salesperson.</strong>.</p>
+
+      <p>At <strong>Tri Stone Industries</strong>, we’ve seen firsthand how businesses transform once they launch a website that not only looks good but also works, bringing in leads, automating sales, and building long-term trust with customers</p>
+
+      <br><br>
+      <h2>The Real Cost of Not Having a Website</h2>
+      <p>Many entrepreneurs think:</p>
+      <p> “I already have a Facebook page, isn’t that enough?”<br> “Building a website is too expensive.”<br>  “My customers find me offline anyway.”</p>
+      <p>But here’s what they’re missing:</p>
+      <ul>
+        <li><strong>Social platforms control visibility</strong> – algorithm changes can drop your reach overnight.</li>
+        <li><strong>Lost credibility</strong> – modern customers expect to “Google you” before they buy.</li>
+        <li><strong>Missed opportunities</strong> – 81% of shoppers research online before making a purchase.</li>
+      </ul>
+      <br>
+      <p>In simple terms: no website = no control over your brand’s story.</p>
+
+      <br><br>
+      <h2>What a Well-Built Website Delivers</h2>
+      <p>A professionally designed website isn’t just about aesthetics. It’s about business growth.</p>
+      <ul>
+        <li><strong>24/7 Lead Generation </strong> – Your website works while you sleep.</li>
+        <li><strong>Brand Authority</strong> – Customers take you seriously when they see polished design and clear messaging.
+    </li>
+        <li><strong>Higher Conversions</strong> – Smart layouts, SEO optimization, and user-friendly navigation increase sales.
+    </li>
+        <li><strong>Scalability</strong> –  From showcasing products to integrating payment gateways, your site grows as you do.</li>
+      </ul>
+      <br>
+      <p>That’s where <strong>Tri Stone Industries</strong>steps in.</p>
+      <p>We specialize in creating <strong>custom websites</strong> that aren’t just beautiful, but also <strong>optimized for search engines, fast loading, and conversion-focused.
+      </strong></p>
+      <p>(Explore our <a href="service.html">Website Development Services</a> to see how we can help you scale.)
+      </p>
+      <br><br>
+      <h2>A Client Story: From Invisible to Unstoppable</h2>
+      <p>One of our clients, a small retail shop, believed their loyal customer base was enough. But after launching their website with us:</p>
+      <ul>
+        <li>They started ranking on Google for local searches within 3 months.</li>
+        <li>Online inquiries grew by <strong>300%.
+        </strong></li>
+        <li>Their revenue increased because they could now sell directly online</li>
+      </ul>
+      <p>This isn’t luck. It’s the power of <strong> smart web design + SEO.</strong>.</p>
+
+      <br><br>
+      <h2>Your Takeaway</h2>
+      <p>If you’re a business owner, startup founder, or entrepreneur still debating whether you need a website, here’s the bottom line:</p>
+      <p>Your customers are online.<br>
+         Your competitors are online.<br>
+         Your growth depends on your online presence.</p> <br>
+      <p>Don’t let another year pass without building a digital home for your business.</p><br>
+      <p>Ready to start?  For more information, <a href="javascript:void(0)" class="openPopup">Get in touch with Tri Stone Industries</a>. today and let’s build a website that works as hard as you do.</p>
+
+      
+    </div>
+  </div>
+</div>
+
+
+    <!-- Blog Page main -->
+    <div id="blogmainpage" class="blog-page">
+        <div class="blog-page-container">
+            <button class="back-btn" onclick="showBlogSection()">← Back to Blogs</button>
+            <div class="blog-page-header">
+                <div class="blog-page-image">
+                  <img src="image/main blog.jpg" alt="Featured Blog Image" style="width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:16/9;" />
+                </div>
+                <h1 class="blog-page-title">Digital Innovation Showcase</h1>
+            </div>
+            <div class="blog-page-content">
+                <p>In today's rapidly evolving digital landscape, innovation is the key to staying competitive and relevant. Companies that embrace cutting-edge technologies and creative solutions are the ones that thrive in an increasingly connected world.</p>
+                
+                <p>From artificial intelligence and machine learning to blockchain technology and the Internet of Things, digital innovation is reshaping industries and creating new possibilities for business growth and customer engagement.</p>
+                
+                <p>This featured article explores the latest trends in digital innovation, showcasing real-world examples of companies that have successfully transformed their operations through strategic technology adoption and creative problem-solving.</p>
+                
+                <p>We examine the key factors that drive successful digital transformation, including leadership commitment, employee engagement, customer-centric design, and the importance of maintaining agility in an ever-changing technological environment.</p>
+                
+                <p>The organizations that will succeed in the digital future are those that view technology not just as a tool, but as a fundamental enabler of new business models, enhanced customer experiences, and innovative solutions to complex challenges.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+
+  
+
+       
+
+
+  <!-- Footer -->
+  <footer style="background:#fff; color:#000; border-top:2px solid #e5e5e5; width:100%; font-family: Arial, sans-serif;">
+    <!-- Top area -->
+    <div style="padding:40px 60px 10px;">
+      <div style="
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        flex-wrap:wrap; 
+        gap:40px; 
+        width:100%;
+        text-align:left;
+      ">
+
+       <!-- Left Logo Section -->
+      <div style="flex:1; min-width:200px; text-align:center;">
+    <img src="image/TSI logo.png" alt="Tri Stone Logo" style="width:100px; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+    <h2 style="margin:0; font-size:20px; font-weight:bold;">TRI STONE</h2>
+    <p style="margin:0; font-size:16px; color:#555;">Industries</p>
+  </div>
+
+        <!-- 2) Quick Links -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Quick Links</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;"><a href="index.html" style="text-decoration:none; color:#000;">Home</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="about.html" style="text-decoration:none; color:#000;">About</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="blog.html" style="text-decoration:none; color:#000;">stuff</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="careers.html" style="text-decoration:none; color:#000;">Careers</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="landingpage/index.html" style="text-decoration:none; color:#000;">Webinar</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) Services -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Our Services</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;">Web Development</li>
+            
+            <li style="margin:6px 0; font-weight:300;">App Development</li>
+          </ul>
+        </div>
+
+        <!-- 4) Get in Touch -->
+        <div style="flex:1.3; min-width:260px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Get in Touch</h3>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- phone icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+918072089889" style="text-decoration:none; color:#000;">+91 8072089889</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+917010705106" style="text-decoration:none; color:#000;">+91 7010705106</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- mail icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+           <a href="https://mail.google.com/mail/?view=cm&to=info@tristoneindustries.com" 
+     target="_blank" 
+     style="text-decoration:none; color:#000;">
+     info@tristoneindustries.com
+</a>
+   </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- location icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Tri Stone Industries Pvt. Ltd., Nasha Residence, No: 22 Andal Nagar, Ariyamangalam, Trichy 620010.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  <footer style="background:#ffffff; padding:15px 60px;">
+     <!-- Bottom area -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+  
+  <!-- Copyright (left) -->
+  <p style="margin-left:3%; font-size:16px; color:#000000; text-align:left;">
+    © 2025 Tri Stone Industries. All rights reserved.
+  </p>
+
+  <!-- Center Links -->
+  <div style="text-align:center; font-size:15px; color:#000000;">
+    <a href="terms-conditon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Terms & Condition</a> |
+    <a href="privacy policy.html" style="margin:0 10px; color:#000000; text-decoration:none;">Privacy Policy</a> |
+    <a href="policies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Policies</a>
+  </div>
+
+  <!-- Social (right corner, black & white icons) -->
+  <div style="margin-right: 3%;">
+    <a href="https://www.instagram.com/tristoneindustries?igsh=OGRidmI0eHpqeHZ5" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://www.linkedin.com/company/stoneindustries/" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://wa.me/918072089889" target="_blank" style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+        style="width:22px; height:22px;">
+    </a>
+  </div>
+
+
+    </div>
+  </footer>
+  </footer>
+
+  <!-- Custom JavaScript -->
+   <script src="script.js"></script>
+  <script src="blog.js"></script>
+
+</body>
+</html>

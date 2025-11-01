@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRI STONE</title>
+
+
+    <!-- Favicon -->
+<!-- Standard Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="image/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="image/android-chrome-512x512.png">
+ <script src="https://cdn.tailwindcss.com"></script>  
+
+<!-- website development-->
+ 
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+
+<!-- Fallback for Older Browsers -->
+<link rel="shortcut icon" href="image/favicon.ico">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font (Modern like SpaceX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="serv-web.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- Google Font -->
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script>
+  (function() {
+    emailjs.init("p1LpwogsoxyskriDR"); // Your Public Key
+  })();
+</script>
+ <!-- why choose us-->
+<style>
+[data-direction="left"], [data-direction="right"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+[data-direction="left"].visible, [data-direction="right"].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('[data-direction]').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+});
+</script>
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="image/TSI logo.png" alt="TSI Logo" class="nav-logo-img">
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="service.html" class="nav-link dropdown-toggle active">
+            Services <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="serv-web.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="serv-app.html" class="dropdown-link">App Development</a></li>
+            <li><a href="serv-DM.html" class="dropdown-link">Digital Marketing</a></li>
+            <li><a href="serv-sw.html" class="dropdown-link">Software Development</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      
+     <!-- Contact Button -->
+<div class="contact-button-container">
+  <a href="javascript:void(0)" class="contact-button" id="openPopup">
+    <i class="fas fa-phone"></i> 
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- Popup Form -->
+<div class="popup-overlay" id="popupForm">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <!-- Name -->
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile Number *</label>
+      <div class="mobile-container">
+        <input type="text" id="countryCode" name="countryCode" value="+" maxlength="5" required style="width: 25%;">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" style="width: 70%;">
+      </div>
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+      
+      
+      <!-- Mobile Toggle Button -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+
+
+<div>   
+        <!-- 1. Company Website -->
+         <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Website Development</h1>
+    </div>
+        <section class="service-section" id="company-website">
+            <div class="service-content">
+                <div class="service-explanation">
+                    <h2>Company Website</h2>
+                    <p> Transform your business presence with a professional company website. We create stunning, responsive websites that showcase your brand identity, values, and services. Our company websites are designed to establish credibility, attract potential clients, and provide essential information about your business 24/7.</p>
+                </div>
+               <div class="web-image"><img src="ui-websites/comp-web (1).png" alt=""></div>
+                </div>
+            </div>
+  <div class="interactive-demo">
+    <div class="demo-navbar">
+        <iframe
+          src="ui-websites/company-web.html"
+          title="Portfolio Website"
+          style="width:100%; height:90vh; border:none; border-radius:12px; overflow:hidden;">
+        </iframe>
+    </div>
+  </div> 
+</section>
+        </div>
+<br><br><br>
+        <!-- 2. Banking Website -->
+         <div>
+        <section class="service-section" id="banking-website" >
+            <div class="service-content">
+                <div class="service-explanation">
+                    <h2>Banking Website</h2>
+                    <p>We develop comprehensive banking platforms that enable seamless financial transactions, account management, and customer service. Our solutions incorporate advanced encryption, multi-factor authentication, and real-time transaction processing.</p>
+                </div>
+              <div class="bank-web">
+                <img src="ui-websites/bk-web.png" alt="">
+              </div>
+                </div>
+            </div>
+            <section class="video-section" >
+  <video id="sampleVideo" class="sample-video" playsinline autoplay muted loop>
+    <source src="ui-websites/banking.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+<br><br><br><br><br>
+
+
+           
+  <div class="interactive-demo">
+        <iframe
+          src="ui-websites/banking-web.html"
+          title="Portfolio Website"
+          style="width:100%; height:90vh; border:none; border-radius:12px; overflow:hidden;">
+        </iframe>
+        </div>
+     </div>
+  </section>
+ </div>
+
+          <!-- 3. E-Commerce Website -->
+          <div>
+        <section class="service-section" id="E-commerce-website" style="padding-top: 3%;">
+            <div class="service-content">
+                <div class="service-explanation">
+                    <h2>E-Commerce Website</h2>
+                    <p> Boost your online sales with our comprehensive e-commerce website development service. We create scalable, secure, and visually appealing online stores tailored to your products and brand. Our e-commerce solutions include easy product management, seamless payment gateways, and optimized checkout processes to increase conversions.
+</p>
+                </div>  <div class="bank-web">
+                <img src="ui-websites/ecom-web.png" alt="">
+              </div>
+            </div>
+        </div>
+
+         <section class="video-section">
+  <video id="sampleVideo" class="sample-video" playsinline autoplay muted loop>
+    <source src="ui-websites/e-commerce.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>          
+        </section>
+        </div>
+
+<br><br><br>
+        
+          <!-- 4. financial Website -->
+           <section class="service-section" id="E-commerce-website">
+            <div class="service-content">
+                <div class="service-explanation">
+                    <h2>Financial Website</h2>
+                    <p> Our financial website development service specializes in creating secure, compliant, and user-centric websites tailored for financial institutions, advisors, and fintech companies. We build robust platforms that provide clear financial information, investment tools, and client management features, ensuring a seamless experience for your users.</p>
+                </div> 
+            </div>
+            <br><br><br>
+             <div class="interactive-demo" >
+     
+        <iframe
+          src="ui-websites/financial-web.html"
+          title="Portfolio Website"
+          style="width:100%; height:90vh; border:none; border-radius:12px; overflow:hidden;">
+        </iframe>
+      
+    </div>
+
+
+        <!-- 5. Portfolio Website -->
+         <div>
+        <section class="service-section" id="portfolio-website"  style="padding-top: 4%;">
+            <div class="service-content">
+                <div class="service-explanation">
+                    <h2>Portfolio Website</h2>
+                    <p>Showcase your work, skills, and achievements with a stunning portfolio website. Perfect for designers, developers, photographers, artists, and professionals across all creative fields. We create visually captivating portfolios that tell your story, highlight your best projects, and make a lasting impression on potential clients and employers.</p>
+                </div>
+               <div class="portfolio-web"> <img src="ui-websites/port-web.png" alt=""></div>
+                </div>
+            </div>    
+                <div class="interactive-demo">
+        <iframe
+          src="ui-websites/portfolio-web.html"
+          title="Portfolio Website"
+          style="width:100%; height:90vh; border:none; border-radius:12px; overflow:hidden;">
+        </iframe>
+    </div>
+ </section>
+</div>
+
+       
+    <!-- Why Choose Us -->
+         
+       <div class="container-chooseus">
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <h2>Why Choose Us for Website Development?</h2>
+            
+            <div class="benefit-card" data-direction="left">
+                <div class="benefit-content">
+                    <h3> Lightning-Fast Performance</h3>
+                    <p>We optimize every aspect of your website for speed and performance. Fast-loading websites improve user experience, boost SEO rankings, and increase conversion rates. Our development practices ensure your site loads in under 3 seconds, keeping visitors engaged and satisfied.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+            </div>
+
+            <div class="benefit-card reverse" data-direction="right">
+                <div class="benefit-content">
+                    <h3> Fully Responsive Design</h3>
+                    <p>Your website will look perfect on every device—desktop, tablet, and mobile. With over 60% of web traffic coming from mobile devices, responsive design is essential. We ensure seamless experiences across all screen sizes, maximizing your reach and engagement.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+            </div>
+
+            <div class="benefit-card" data-direction="left">
+                <div class="benefit-content">
+                    <h3> Bank-Level Security</h3>
+                    <p>Security is our top priority. We implement SSL certificates, data encryption, secure authentication, and regular security audits. Your website and customer data are protected against cyber threats, ensuring trust and compliance with industry standards.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+
+            <div class="benefit-card reverse" data-direction="right">
+                <div class="benefit-content">
+                    <h3> Custom Design Excellence</h3>
+                    <p>No templates, no shortcuts. Every website we create is custom-designed to reflect your unique brand identity and business goals. Our design team creates stunning visuals that captivate visitors and convert them into customers, setting you apart from competitors.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+            </div>
+
+            <div class="benefit-card" data-direction="left">
+                <div class="benefit-content">
+                    <h3> SEO Optimization</h3>
+                    <p>Built-in SEO best practices ensure your website ranks higher in search results. We optimize meta tags, site structure, loading speed, mobile-friendliness, and content. Better visibility means more organic traffic, leads, and business growth without paying for ads.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="benefit-card reverse" data-direction="right">
+                <div class="benefit-content">
+                    <h3> Easy Content Management</h3>
+                    <p>Update your website anytime without technical knowledge. We integrate user-friendly content management systems that let you add pages, update content, upload images, and manage your site independently. Take control of your online presence with confidence.</p>
+                </div>
+                <div class="benefit-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+          
+ <!-- Contact Section -->
+     <section class="contact-section-alt">
+  <h2 style="font-size: 48px; margin-bottom: 30px;">Ready to Get Started?</h2>
+  <p style="font-size: 20px; margin-bottom: 40px; color: #0a0a0a;">
+    Let's bring your vision to life with a stunning website
+  </p>
+  <button class="contact-btn-alt" id="openContactFormAlt">Contact Us Now</button>
+</section>
+
+<!-- Contact Form Popup -->
+<div class="popup-overlay-alt" id="contactPopupAlt">
+  <div class="popup-content-alt">
+    <span class="close-btn-alt" id="closeContactFormAlt">&times;</span>
+    <h2>Get In Touch</h2>
+    <form id="contactFormAlt">
+      <label for="nameAlt">Name *</label>
+      <input type="text" id="nameAlt" name="nameAlt" required>
+
+      <label for="emailAlt">Email *</label>
+      <input
+        type="email"
+        id="emailAlt"
+        name="emailAlt"
+        required
+        placeholder="example@mail.com"
+      >
+
+      <label for="mobileAlt">Mobile Number *</label>
+      <div class="mobile-container-alt">
+        <input
+          type="text"
+          id="countryCodeAlt"
+          name="countryCodeAlt"
+          value="+91"
+          maxlength="5"
+          required
+          style="width: 25%;"
+        >
+        <input
+          type="tel"
+          id="mobileAlt"
+          name="mobileAlt"
+          required
+          pattern="[0-9]{10}"
+          maxlength="10"
+          placeholder="10-digit number"
+          style="width: 70%;"
+        >
+      </div>
+
+      <label for="messageAlt">Message</label>
+      <textarea id="messageAlt" name="messageAlt" rows="4"></textarea>
+
+      <button type="submit" class="submit-btn-alt">Send Message</button>
+    </form>
+  </div>
+</div>
+ <!-- Footer -->
+
+  
+  <footer style="background:#fff; color:#000; border-top:2px solid #e5e5e5; width:100%; font-family: Arial, sans-serif;">
+    <!-- Top area -->
+    <div style="padding:40px 60px 10px;">
+      <div style="
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        flex-wrap:wrap; 
+        gap:40px; 
+        width:100%;
+        text-align:left;">
+
+       <!-- Left Logo Section -->
+     <div style="flex:1; min-width:200px; text-align:center;">
+    <img src="image/TSI logo.png" alt="Tri Stone Logo" style="width:100px; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+    <h2 style="margin:0; font-size:20px; font-weight:bold;">TRI STONE</h2>
+    <p style="margin:0; font-size:16px; color:#555;">Industries</p>
+  </div>
+
+        <!-- 2) Quick Links -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Quick Links</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;"><a href="index.html" style="text-decoration:none; color:#000;">Home</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="about.html" style="text-decoration:none; color:#000;">About</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="blog.html" style="text-decoration:none; color:#000;">stuff</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="careers.html" style="text-decoration:none; color:#000;">Careers</a></li>
+            <li style="margin:6px 0; font-weight:300;"><a href="landingpage/index.html" style="text-decoration:none; color:#000;">Webinar</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) Services -->
+        <div style="flex:1; min-width:220px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Our Services</h3>
+          <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+            <li style="margin:6px 0; font-weight:300;">Web Development</li>
+            
+            <li style="margin:6px 0; font-weight:300;">App Development</li>
+          </ul>
+        </div>
+
+        <!-- 4) Get in Touch -->
+        <div style="flex:1.3; min-width:260px; text-align:left;">
+          <h3 style="font-weight:700; margin:0 0 12px 0; text-align:left;">Get in Touch</h3>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- phone icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24
+             24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+918072089889" style="text-decoration:none; color:#000;">+91 8072089889</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.88.37 1.73.72 2.51a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 7 7l1.66-1.36a2 2 0 0 1 2.11-.45c.78.35 1.63.6 2.51.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+917010705106" style="text-decoration:none; color:#000;">+91 7010705106</a>
+          </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- mail icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+           <a href="https://mail.google.com/mail/?view=cm&to=info@tristoneindustries.com" 
+     target="_blank" 
+     style="text-decoration:none; color:#000;">
+     info@tristoneindustries.com
+    </a>
+    </p>
+
+          <p style="margin:6px 0; font-weight:300; text-align:left;">
+            <!-- location icon -->
+            <svg style="width:16px; height:16px; vertical-align:middle; margin-right:6px; stroke:#888;" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Tri Stone Industries Pvt. Ltd., Nasha Residence, No: 22 Andal Nagar, Ariyamangalam, Trichy 620010.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  <footer style="background:#ffffff; padding:15px 60px;">
+    <!-- Bottom area -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+  
+  <!-- Copyright (left) -->
+  <p style="margin-left:3%; font-size:16px; color:#000000; text-align:left;">
+    © 2025 Tri Stone Industries. All rights reserved.
+  </p>
+
+  <!-- Center Links -->
+  <div style="text-align:center; font-size:15px; color:#000000;">
+    <a href="terms-conditon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Terms & Condition</a> |
+    <a href="privacy policy.html" style="margin:0 10px; color:#000000; text-decoration:none;">Privacy Policy</a> |
+    <a href="policies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Policies</a>
+  </div>
+
+  <!-- Social (right corner, black & white icons) -->
+  <div style="margin-right: 3%;">
+    <a href="https://www.instagram.com/tristoneindustries?igsh=OGRidmI0eHpqeHZ5" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://www.linkedin.com/company/stoneindustries/" target="_blank"
+      style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"
+        style="width:22px; height:22px;">
+    </a>
+    <a href="https://wa.me/918072089889" target="_blank" style="margin:0 8px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+        style="width:22px; height:22px;">
+    </a>
+  </div>
+  </div>
+  </footer>
+<script src="blog.js"></script>
+<script src="script.js"></script>
+<script src="serv-web.js"></script>
+
+    
+  
+</body>
+</html>
