@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,maximum-scale=5.0"/>
+<title>PCB Design — Tri Stone Industries Pvt. Ltd.</title>
+<meta name="description" content="Complete PCB design services — schematic capture, multi-layer layout, BMS, EMS, prototyping and mass production. Analog and digital PCB design."/>
+<meta property="og:title" content="PCB Design | Tri Stone Industries Pvt. Ltd."/>
+<meta property="og:description" content="Complete PCB design services — schematic capture, multi-layer layout, BMS, EMS, prototyping and mass production. Analog and digital PCB design."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.tristoneindustries.com"/>
+<link rel="canonical" href="https://www.tristoneindustries.com"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tri Stone Industries Pvt. Ltd.","url":"https://www.tristoneindustries.com","telephone":"+918072089889","email":"info@tristoneindustries.com","address":{"@type":"PostalAddress","streetAddress":"Nasha Residence, No: 22, Andal Nagar, Ariyamangalam","addressLocality":"Tiruchirappalli","addressRegion":"Tamil Nadu","postalCode":"620010","addressCountry":"IN"}}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f8fafc;--bg3:#f1f5f9;--bg4:#e2e8f0;
+  --dark:#0f172a;--dark2:#1e293b;
+  --border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.06);
+  --accent:#1d4ed8;--accent2:#6d28d9;--accent-light:#eff6ff;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --font-d:'DM Sans',sans-serif;
+  --font-b:'DM Sans','Inter',sans-serif;
+  --font-m:'JetBrains Mono',monospace;
+  --r:14px;--r2:10px;--r3:8px;
+  --shadow:0 1px 3px rgba(0,0,0,0.07),0 4px 16px rgba(0,0,0,0.06);
+  --shadow-md:0 4px 6px rgba(0,0,0,0.07),0 10px 40px rgba(0,0,0,0.09);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
+  --tr:all 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+input,select,textarea{font-family:inherit}
+::selection{background:rgba(29,78,216,0.12);color:var(--text)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+/* SCROLL PROGRESS */
+#sp{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999;transition:width 0.08s linear}
+
+/* CURSOR */
+#cur{position:fixed;width:9px;height:9px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+#cur-r{position:fixed;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(29,78,216,0.35);pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:transform .13s ease,width .22s,height .22s}
+.ch #cur{width:16px;height:16px}.ch #cur-r{width:48px;height:48px;border-color:var(--accent)}
+@media(max-width:768px){#cur,#cur-r{display:none}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.88);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border2);transition:var(--tr)}
+.nav.scrolled{height:62px;background:rgba(255,255,255,0.97);box-shadow:0 1px 12px rgba(0,0,0,0.08)}
+.nav-logo{display:flex;align-items:center;gap:13px;cursor:pointer;text-decoration:none}
+.nav-logo img{width:40px;height:40px;object-fit:contain}
+.nav-brand{font-family:var(--font-d);font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.01em;line-height:1.2}
+.nav-brand small{display:block;font-size:0.6rem;font-weight:500;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-m)}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:600;color:var(--text2);transition:var(--tr);position:relative;padding:4px 0;font-family:var(--font-d)}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .28s ease;border-radius:2px}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:9px 22px!important;border-radius:8px;font-weight:700!important;box-shadow:0 2px 10px rgba(29,78,216,0.28);transition:var(--tr)!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:#1e40af!important;transform:translateY(-1px);box-shadow:0 4px 18px rgba(29,78,216,0.38)!important}
+.nav-hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hbg span{display:block;width:22px;height:2px;background:var(--text2);border-radius:2px;transition:var(--tr)}
+.nav-hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hbg.open span:nth-child(2){opacity:0}
+.nav-hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mob{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border2);padding:1.25rem 5%;flex-direction:column;gap:.35rem;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.nav-mob.open{display:flex}
+.nav-mob a{padding:11px 14px;border-radius:8px;color:var(--text2);font-size:.9rem;font-weight:600;font-family:var(--font-d);transition:var(--tr)}
+.nav-mob a:hover{background:var(--accent-light);color:var(--accent)}
+.nav-mob .nav-cta{text-align:center;margin-top:8px;display:block;padding:12px!important}
+@media(max-width:960px){.nav-links{display:none}.nav-hbg{display:flex}}
+
+/* PAGE HERO BANNER */
+.ph{padding:130px 5% 64px;background:linear-gradient(135deg,#f0f4ff 0%,#fafbff 60%,#f8fafc 100%);border-bottom:1px solid var(--border2);position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;right:5%;top:50%;transform:translateY(-50%);width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.06),transparent 70%);pointer-events:none}
+.ph-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.85rem}
+.ph-eyebrow::before{content:'';width:16px;height:1.5px;background:var(--accent);display:inline-block}
+.ph h1{font-family:'DM Sans',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--text);line-height:1.05;letter-spacing:-.035em;margin-bottom:1rem}
+.ph p{color:var(--text2);font-size:1.05rem;max-width:620px;line-height:1.75}
+
+/* SECTION COMMONS */
+section{padding:88px 5%}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.85rem}
+.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--accent);display:inline-block}
+.s-title{font-family:'DM Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:.9rem}
+.s-sub{color:var(--text2);font-size:.98rem;line-height:1.75;max-width:580px}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.grad-line{height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);opacity:.18}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:700;font-size:.9rem;border-radius:8px;padding:12px 24px;transition:var(--tr);cursor:pointer;border:none;text-decoration:none}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 12px rgba(29,78,216,0.28)}
+.btn-primary:hover{background:#1e40af;transform:translateY(-1px);box-shadow:0 4px 20px rgba(29,78,216,0.38)}
+.btn-outline{background:#fff;color:var(--accent);border:1.5px solid var(--accent)}
+.btn-outline:hover{background:var(--accent-light);transform:translateY(-1px)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:var(--dark2);transform:translateY(-1px)}
+.btn-lg{padding:15px 32px;font-size:1rem;border-radius:10px}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border2);border-radius:var(--r);padding:2rem;transition:var(--tr);box-shadow:var(--shadow)}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:rgba(29,78,216,0.15)}
+.card-icon{width:48px;height:48px;border-radius:12px;background:var(--accent-light);border:1px solid rgba(29,78,216,0.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--accent);margin-bottom:1.1rem;transition:var(--tr)}
+.card:hover .card-icon{background:var(--accent);color:#fff;border-color:transparent}
+
+/* FOOTER */
+.footer{background:var(--dark);padding:60px 5% 28px}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:.85rem}
+.ft-logo img{width:46px;height:46px;object-fit:contain;filter:invert(1)}
+.ft-brand-name{font-family:var(--font-d);font-weight:800;font-size:.95rem;color:#fff}
+.ft-brand-name small{display:block;font-size:.58rem;color:rgba(255,255,255,0.4);font-family:var(--font-m);letter-spacing:.06em;text-transform:uppercase}
+.footer-brand p{color:rgba(255,255,255,0.45);font-size:.82rem;line-height:1.72;margin-bottom:1.25rem;max-width:260px}
+.ft-col-title{font-family:var(--font-d);font-weight:700;font-size:.8rem;color:#fff;margin-bottom:1.1rem;letter-spacing:.02em}
+.ft-links{display:flex;flex-direction:column;gap:.5rem}
+.ft-links a{color:rgba(255,255,255,0.45);font-size:.82rem;transition:color .2s}
+.ft-links a:hover{color:#fff}
+.ft-contact-item{display:flex;gap:10px;margin-bottom:.75rem;align-items:flex-start}
+.ft-contact-item i{color:rgba(255,255,255,0.4);font-size:.9rem;margin-top:2px;flex-shrink:0}
+.ft-contact-item span{color:rgba(255,255,255,0.45);font-size:.82rem;line-height:1.5}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,0.08);font-size:.75rem;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:.9rem}
+.footer-bottom a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-bottom a:hover{color:#fff}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+
+/* AI WIDGET */
+.ai-fab{position:fixed;bottom:26px;right:26px;z-index:990;width:54px;height:54px;border-radius:50%;background:var(--accent);box-shadow:0 4px 20px rgba(29,78,216,0.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;cursor:pointer;transition:var(--tr);border:none}
+.ai-fab:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(29,78,216,0.5)}
+.ai-win{position:fixed;bottom:92px;right:26px;z-index:989;width:348px;max-height:500px;background:#fff;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;display:none;flex-direction:column;box-shadow:var(--shadow-lg)}
+.ai-win.open{display:flex}
+.ai-head{padding:.85rem 1.1rem;background:var(--bg2);border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}
+.ai-head-l{display:flex;align-items:center;gap:10px}
+.ai-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff}
+.ai-hname{font-family:var(--font-d);font-weight:700;font-size:.88rem;color:var(--text)}
+.ai-hstatus{font-size:.65rem;color:#16a34a;font-family:var(--font-m)}
+.ai-x{color:var(--text3);font-size:1.1rem;cursor:pointer;transition:color .2s;background:none;border:none}
+.ai-x:hover{color:var(--text)}
+.ai-msgs{flex:1;overflow-y:auto;padding:.85rem;display:flex;flex-direction:column;gap:.6rem}
+.ai-msg{max-width:86%;padding:9px 13px;border-radius:11px;font-size:.83rem;line-height:1.5}
+.ai-msg.bot{background:var(--bg2);border:1px solid var(--border2);color:var(--text2);border-radius:11px 11px 11px 3px;align-self:flex-start}
+.ai-msg.user{background:var(--accent);color:#fff;border-radius:11px 11px 3px 11px;align-self:flex-end}
+.ai-suggs{padding:.4rem .85rem;display:flex;flex-wrap:wrap;gap:5px}
+.ai-sug{padding:4px 11px;border-radius:100px;font-size:.72rem;border:1px solid var(--border);color:var(--text2);cursor:pointer;transition:var(--tr);background:none}
+.ai-sug:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.ai-inp-wrap{padding:.6rem;border-top:1px solid var(--border2);display:flex;gap:7px;align-items:center}
+.ai-inp{flex:1;background:var(--bg2);border:1px solid var(--border2);border-radius:7px;padding:7px 12px;color:var(--text);font-size:.82rem;outline:none;transition:var(--tr)}
+.ai-inp:focus{border-color:var(--accent);background:#fff}
+.ai-send{width:32px;height:32px;border-radius:7px;background:var(--accent);color:#fff;font-size:.9rem;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
+.ai-send:hover{background:#1e40af}
+.ai-typing{display:flex;gap:4px;padding:9px 13px;background:var(--bg2);border:1px solid var(--border2);border-radius:11px 11px 11px 3px;width:fit-content;align-self:flex-start}
+.ai-typing span{width:5px;height:5px;border-radius:50%;background:var(--text3);animation:tb 1.2s infinite}
+.ai-typing span:nth-child(2){animation-delay:.2s}.ai-typing span:nth-child(3){animation-delay:.4s}
+@keyframes tb{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}}
+
+/* NEWSLETTER */
+.nl-form{display:flex;border-radius:8px;overflow:hidden;border:1.5px solid var(--border);box-shadow:var(--shadow)}
+.nl-form input{flex:1;padding:10px 14px;background:#fff;border:none;color:var(--text);font-size:.85rem;outline:none}
+.nl-form button{padding:10px 18px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:700;border:none;cursor:pointer;font-family:var(--font-d);transition:background .2s;white-space:nowrap}
+.nl-form button:hover{background:#1e40af}
+
+/* TAG BADGES */
+.badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:.7rem;font-family:var(--font-m);font-weight:500}
+.badge-blue{background:var(--accent-light);color:var(--accent);border:1px solid rgba(29,78,216,.15)}
+.badge-purple{background:#f3f0ff;color:var(--accent2);border:1px solid rgba(109,40,217,.15)}
+.badge-green{background:#f0fdf4;color:#16a34a;border:1px solid rgba(22,163,74,.15)}
+.badge-orange{background:#fff7ed;color:#ea580c;border:1px solid rgba(234,88,12,.15)}
+
+/* GRID UTILS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid-4{grid-template-columns:1fr}}
+
+/* MISC */
+.section-dark{background:var(--dark);color:#fff}
+.section-dark .s-title{color:#fff}
+.section-dark .s-sub{color:rgba(255,255,255,0.55)}
+.section-dark .eyebrow{color:#60a5fa}
+.section-dark .eyebrow::before{background:#60a5fa}
+.center{text-align:center}
+.center .s-sub{margin:0 auto}
+.sep{height:1px;background:var(--border2);margin:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)!important;box-shadow:0 0 0 3px rgba(29,78,216,.1)!important}
+/* ═══════════ COMPREHENSIVE RESPONSIVE FIX ═══════════ */
+
+/* ── iPad Pro / Large Tablet (1024px) ── */
+@media(max-width:1024px){
+  .ph{padding:90px 6% 56px}
+  .ph h1{font-size:clamp(2rem,5vw,3rem)}
+  section{padding:64px 6%}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+  #scene-chips{bottom:20px}
+}
+
+/* ── iPad / Tablet (768px) ── */
+@media(max-width:768px){
+  /* Nav */
+  .nav{padding:0 4%}
+  .nav-links{display:none}
+  .nav-hbg{display:flex}
+
+  /* Hero */
+  .ph{padding:88px 4% 56px;min-height:auto}
+  .ph h1{font-size:clamp(1.75rem,7.5vw,2.6rem);line-height:1.18}
+  .ph p{font-size:.92rem;line-height:1.65}
+  .ph::before{display:none}
+
+  /* Hero grid → single column, 3D canvas hides behind text */
+  div[style*="grid-template-columns:1fr 1fr"][style*="z-index:2"]{
+    grid-template-columns:1fr!important;gap:2rem!important}
+
+  /* Sections */
+  section{padding:52px 4%}
+  .s-title{font-size:clamp(1.45rem,6vw,2.1rem)}
+  .s-sub{font-size:.9rem}
+
+  /* Grids */
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+
+  /* Cards */
+  .card{padding:1.4rem}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;gap:.5rem;text-align:center}
+
+  /* 3D scene chips */
+  #scene-chips{bottom:12px;left:3%;right:3%;gap:5px}
+  .sc-chip{padding:5px 10px;font-size:.62rem}
+  #autoplay-btn{width:28px;height:28px;font-size:.78rem}
+
+  /* World label */
+  #world-label{top:auto!important;bottom:58px;left:3%;right:3%;
+    justify-content:space-between;padding:6px 12px}
+  #world-label span:first-child{font-size:.68rem!important}
+
+  /* AI chat */
+  .ai-win{width:calc(100vw - 24px);right:12px;bottom:72px}
+  .ai-fab{bottom:14px;right:14px}
+
+  /* Intro screen skip btn */
+  #iskip{bottom:18px!important;right:16px!important;
+    padding:7px 18px!important;font-size:.7rem!important}
+
+  /* Buttons */
+  .btn-lg{padding:12px 20px;font-size:.88rem}
+  .btn-lg+.btn-lg{margin-left:0;margin-top:.6rem}
+}
+
+/* ── Mobile Landscape / Large Phone (640px) ── */
+@media(max-width:640px){
+  .ph{padding:80px 4% 48px}
+  .ph h1{font-size:clamp(1.6rem,7vw,2.2rem)}
+  section{padding:44px 4%}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .s-title{font-size:clamp(1.35rem,6.5vw,1.9rem)}
+}
+
+/* ── Mobile Portrait (480px) ── */
+@media(max-width:480px){
+  .ph{padding:76px 4% 44px}
+  .ph h1{font-size:clamp(1.5rem,8vw,2rem);line-height:1.15}
+  section{padding:40px 4%}
+  .grid-4{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .card{padding:1.2rem}
+  .s-title{font-size:1.45rem}
+  .s-sub{font-size:.85rem}
+  #scene-chips .sc-chip:nth-child(4){display:none} /* hide 3rd chip if too crowded */
+}
+
+/* ── Small Phone (375px) ── */
+@media(max-width:375px){
+  .ph h1{font-size:1.45rem}
+  .ph p{font-size:.85rem}
+  .nav-logo img{width:28px}
+  .nav-brand{font-size:.88rem}
+  section{padding:36px 3.5%}
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="sp"></div><div id="cur"></div><div id="cur-r"></div>
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="data:image/png;base64,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o2lznuJwGgDqST0wEEo/o59IPuG4V61lPFmmtFF7NA5zP7eY92n4iNjwR/1B+c71zjhv27ZtltNatOysjFyeDV3N7cHmqZMFwyO/KA1gPqGBdHQEREBERAREQEREBERAREQEREBERBp+8W39n3M0DX6UvADGzjnpqgN5nUs7QeSVv4EkEZGWlw9VVxuFo+/6D1bW6Y1JRmmr6R2DjJZKz7sjHfeY4dQfyOCCBbuuab+7Oab3c00KK5j2K7UzSbfc42AyQOP3XDpzxk925+YIPVBVotl210trDVmq6Sg0Rba2su0UjZo5Kfy+zlpyJHSHAjAIHmJHXHrhd/254QNQm8VtXufdqOw6et0jvEkpqlj31bGjPO158sUfrzPHN0xyjuNk13xG6B2vsT9FbD2G3yOjPLLc3RH2cPHlLhnD6h/T33Hl7EF46IOz8Qu2133L2AFsulPSSayt9LHXQmkJMbqxjPtY4ycHlkBe0A4AJaT7qrQ7dCpScHu+WoTvRPa9cagq7lBqothbNVS5ENWM+FyjPKxrsmPlaB1MfYBanxt7bHQu7c13oIOSy6kL62n5R0jnyPHj/wBTg8dgBIAOyDg6nBwMbaUOkNH1W72r309BJW07hQS1jxGylo8+aZxdgN5yOhP3ACDh5UcuGHa2bdTc6ltdRFJ9R0OKq7StyB4IPSMOHZzz5R1zjmcPdXauPfdSEOp9oNNPjioaNscl3ELQGZbgw04x0AaAHkY78g6cpCDE8c22m4NRrOq3Hc/690w+COOGWlbn6uhaMhj29TyElzvEGQS455cgKLC7tw7cR+odtPDsN+ZPf9Iu8ho3uBmpGnuYS7py/wDTceU+hbkk9S3O4fNFbpaafuHsNX0IklBdLaI3COCR4GSxoOPZ5evuOw3qPcHUhDdTA4FdkJp62DdPVdCWU0PmsNPKOsj+oNSW/sj7me5y7phpPp4aOFK4VVxh1RupQmkoYH81NZJDmSocD0dPj3Y/8Hd3rgdHTaijjiiZFExscbGhrWtGA0DsAPQIPJERAREQEREBERAREQEREBERAREQEREBERBjNU2Cy6osNVYdQ22nuVsq2hs9PO3LXYIIPxBBAII6ggEdVEndjgva6SW4baXxsYJLvqy6OOB8mTAE/IBwPzcpkogqn1dtHunoapE940feqMQO8RtZTRmaJhach3ixczWnpkdQVMC5Mg4m+E1lTTxxzart7OdrGlrS24wt8zOpAAlaemTgeI0n3VJheEUMMT5HxxRsdIeZ5a0AuOMZPxOAgjVRQ2vhV4aZamUU02r7mASD5vHrnt8rfnFCO/UA8ruxeoM0tDqbWN9qp6K33S/XSrmdPUGmp3zyySPcS5xDQTkkkq3G52m1XN0TrlbKKtMJJiNRA2TkJxnl5gcZwO3wX000EFNCIaaGOGNvZkbQ1o/IIK6tuuE7dTU8sU15pKfS1vdgulr3h03L/hhYSc/J5YpjbCbHaV2hpqmSz1Vwr7nWxtjrKyolIbIAcgNib5GgHOCcuGSObBXU0QEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/2Q==" alt="Tri Stone Industries Logo">
+    <div class="nav-brand">Tri Stone Industries<small>Pvt. Ltd.</small></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="what-we-do.html" class="active">What We Do</a></li>
+    <li><a href="what-we-think.html">What We Think</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-hbg" id="hbg"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mob" id="nmob">
+  <a href="index.html">Home</a>
+  <a href="what-we-do.html">What We Do</a>
+  <a href="what-we-think.html">What We Think</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html" class="nav-cta">Contact Us</a>
+</div>
+
+<div class="ph">
+  <div class="ph-eyebrow">Hardware Services</div>
+  <h1>PCB Design</h1>
+  <p>Complete printed-circuit-board engineering — from schematic to mass production, for any application.</p>
+  <div style="display:flex;gap:1rem;margin-top:1.75rem;flex-wrap:wrap;">
+    <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote <i class="ri-arrow-right-line"></i></a>
+    <a href="what-we-do.html" class="btn btn-outline btn-lg">All Services</a>
+  </div>
+</div>
+<section style="background:#fff;">
+  <div class="reveal" style="margin-bottom:3rem;">
+    <div class="eyebrow">What We Design</div>
+    <h2 class="s-title">Complete PCB Engineering Services</h2>
+    <p class="s-sub">From a napkin sketch to factory-ready Gerber files — every stage of board development under one roof.</p>
+  </div>
+  <div class="grid-3 reveal"><div class="card"><div class="card-icon"><i class="ri-draft-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Complete PCB Design</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">End-to-end design from requirement to manufacturing files — schematic capture, layout, DRC and Gerber output.</p></div><div class="card"><div class="card-icon"><i class="ri-node-tree"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Schematic Capture</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Clean, reviewable schematics with proper net naming, component selection and design documentation.</p></div><div class="card"><div class="card-icon"><i class="ri-layout-grid-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Multi-Layer Layout</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">2 to 12+ layer boards with controlled impedance, proper stack-up and signal-integrity care.</p></div><div class="card"><div class="card-icon"><i class="ri-battery-2-charge-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">BMS (Battery Mgmt System)</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Battery management boards — cell balancing, protection, charge control and state-of-charge monitoring.</p></div><div class="card"><div class="card-icon"><i class="ri-cpu-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">EMS (Embedded/Energy Mgmt)</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Embedded and energy-management system boards integrating MCUs, sensors and power control.</p></div><div class="card"><div class="card-icon"><i class="ri-pulse-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Analog PCB Design</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Low-noise analog front-ends, sensor signal conditioning, amplifiers and precision measurement circuits.</p></div><div class="card"><div class="card-icon"><i class="ri-bit-coin-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Digital PCB Design</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">High-speed digital boards — microcontrollers, memory, communication buses and logic.</p></div><div class="card"><div class="card-icon"><i class="ri-flashlight-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Power Electronics</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">SMPS, converters, motor drivers and high-current power-distribution boards.</p></div><div class="card"><div class="card-icon"><i class="ri-cube-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Prototyping</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Quick-turn prototype boards for validation before committing to volume production.</p></div><div class="card"><div class="card-icon"><i class="ri-stack-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Mass Production</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">DFM-optimised designs and production support for reliable, repeatable high-volume manufacturing.</p></div><div class="card"><div class="card-icon"><i class="ri-search-eye-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Design Review &amp; DRC</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Design-rule checks, signal-integrity review and manufacturability audits before fabrication.</p></div><div class="card"><div class="card-icon"><i class="ri-file-list-3-line"></i></div><div style="font-family:var(--font-d);font-weight:700;font-size:.95rem;margin-bottom:.45rem;">Gerber &amp; BOM Output</div><p style="font-size:.83rem;color:var(--text2);line-height:1.6;">Complete manufacturing package — Gerbers, drill files, BOM, pick-and-place and assembly drawings.</p></div></div>
+</section>
+
+<div class="sep"></div>
+<section style="background:#fff;">
+  <div class="reveal center" style="margin-bottom:3rem;">
+    <div class="eyebrow" style="justify-content:center;">Why It Matters</div>
+    <h2 class="s-title">The Gap — And How PCB Design Closes It</h2>
+    <p class="s-sub" style="margin:0 auto;">Most organisations know something is missing but can't name it. Here is exactly what's holding you back, what we deliver, and the difference you'll see.</p>
+  </div>
+  <div class="grid-3 reveal" style="align-items:stretch;">
+    <div class="card" style="display:flex;flex-direction:column;">
+      <div style="display:inline-flex;align-items:center;gap:7px;align-self:flex-start;background:#fef2f2;color:#dc2626;font-family:var(--font-m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:1rem;"><i class="ri-error-warning-line"></i>The Gap</div>
+      <div style="font-family:var(--font-d);font-weight:700;font-size:1.02rem;margin-bottom:.9rem;">What Most Organisations Lack</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem;padding:0;margin:0;">
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-close-circle-line" style="color:#dc2626;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Reliance on off-the-shelf modules that don’t fit the product’s size, cost or function.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-close-circle-line" style="color:#dc2626;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Prototypes fail in the field because signal integrity and power were never properly designed.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-close-circle-line" style="color:#dc2626;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>No clean schematic or BOM — every revision becomes guesswork and rework.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-close-circle-line" style="color:#dc2626;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Designs aren’t manufacturable, so production is delayed and costs balloon.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-close-circle-line" style="color:#dc2626;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>No single partner for battery (BMS), energy (EMS), analog and digital needs.</span></li>
+      </ul>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;">
+      <div style="display:inline-flex;align-items:center;gap:7px;align-self:flex-start;background:var(--accent-light);color:var(--accent);font-family:var(--font-m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:1rem;"><i class="ri-tools-line"></i>Our Solution</div>
+      <div style="font-family:var(--font-d);font-weight:700;font-size:1.02rem;margin-bottom:.9rem;">What We Provide</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem;padding:0;margin:0;">
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-checkbox-circle-line" style="color:var(--accent);font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Complete PCB design — schematic, multi-layer layout, DRC and factory-ready Gerber/BOM.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-checkbox-circle-line" style="color:var(--accent);font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Specialised BMS and EMS boards for battery and energy-management products.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-checkbox-circle-line" style="color:var(--accent);font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Dedicated analog and digital design expertise — clean signals, reliable logic.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-checkbox-circle-line" style="color:var(--accent);font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Prototype-to-mass-production path with DFM so volume builds are smooth.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-checkbox-circle-line" style="color:var(--accent);font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Power electronics, controlled-impedance and high-speed design when needed.</span></li>
+      </ul>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;">
+      <div style="display:inline-flex;align-items:center;gap:7px;align-self:flex-start;background:#f0fdf4;color:#16a34a;font-family:var(--font-m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:1rem;"><i class="ri-rocket-2-line"></i>The Impact</div>
+      <div style="font-family:var(--font-d);font-weight:700;font-size:1.02rem;margin-bottom:.9rem;">How It Improves You</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem;padding:0;margin:0;">
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-arrow-up-circle-line" style="color:#16a34a;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>A board that fits your exact size, cost and performance target — no compromises.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-arrow-up-circle-line" style="color:#16a34a;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Fewer respins: signal-integrity and DFM checks catch problems before fabrication.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-arrow-up-circle-line" style="color:#16a34a;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Faster time-to-market with a clear prototype-to-production roadmap.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-arrow-up-circle-line" style="color:#16a34a;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>Lower unit cost at volume thanks to manufacturing-optimised designs.</span></li>
+        <li style="display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--text2);line-height:1.6;"><i class="ri-arrow-up-circle-line" style="color:#16a34a;font-size:.95rem;flex-shrink:0;margin-top:2px;"></i><span>One accountable partner from idea to finished, tested boards.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:2.25rem;background:linear-gradient(135deg,var(--accent-light),#f3f0ff);border:1px solid rgba(29,78,216,.14);border-radius:var(--r);padding:2rem;">
+    <div style="display:inline-flex;align-items:center;gap:7px;font-family:var(--font-m);font-size:.62rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem;"><i class="ri-lightbulb-flash-line"></i>Real-World Example</div>
+    <div style="font-family:var(--font-d);font-weight:700;font-size:1.05rem;margin-bottom:.55rem;">A custom controller board, designed right</div>
+    <p style="font-size:.88rem;color:var(--text2);line-height:1.75;max-width:760px;margin:0;">A company relying on generic dev-boards finds them bulky and costly at scale. We design a purpose-built PCB — proper schematic, compact multi-layer layout, integrated BMS for the battery, and a clean BOM — then deliver prototypes for testing and DFM-ready files for mass production, cutting both size and per-unit cost dramatically.</p>
+  </div>
+</section>
+<div class="sep"></div>
+<section style="background:var(--bg2);">
+  <div class="reveal center" style="margin-bottom:2.5rem;">
+    <div class="eyebrow" style="justify-content:center;">Industries Served</div>
+    <h2 class="s-title">Who We Build For</h2>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;" class="reveal">
+    <span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Product Startups</span><span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Energy &amp; Solar</span><span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Automotive</span><span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Medical Devices</span><span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Consumer Electronics</span><span class="badge badge-blue" style="padding:8px 18px;font-size:.82rem;">Industrial OEMs</span></div>
+</section>
+<section style="background:var(--dark);padding:72px 5%;text-align:center;" class="section-dark">
+  <h2 class="s-title reveal" style="color:#fff;max-width:680px;margin:0 auto 1rem;">Ready to Design Your PCB?</h2>
+  <p style="color:rgba(255,255,255,.6);font-size:.98rem;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;" class="reveal">Site visit + feasibility study available. Call us for a demo.</p>
+  <a href="contact.html" class="btn btn-primary btn-lg reveal" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">Talk to Our PCB Team <i class="ri-arrow-right-line"></i></a>
+</section>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="ft-logo">
+        <img src="data:image/png;base64,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o2lznuJwGgDqST0wEEo/o59IPuG4V61lPFmmtFF7NA5zP7eY92n4iNjwR/1B+c71zjhv27ZtltNatOysjFyeDV3N7cHmqZMFwyO/KA1gPqGBdHQEREBERAREQEREBERAREQEREBERBp+8W39n3M0DX6UvADGzjnpqgN5nUs7QeSVv4EkEZGWlw9VVxuFo+/6D1bW6Y1JRmmr6R2DjJZKz7sjHfeY4dQfyOCCBbuuab+7Oab3c00KK5j2K7UzSbfc42AyQOP3XDpzxk925+YIPVBVotl210trDVmq6Sg0Rba2su0UjZo5Kfy+zlpyJHSHAjAIHmJHXHrhd/254QNQm8VtXufdqOw6et0jvEkpqlj31bGjPO158sUfrzPHN0xyjuNk13xG6B2vsT9FbD2G3yOjPLLc3RH2cPHlLhnD6h/T33Hl7EF46IOz8Qu2133L2AFsulPSSayt9LHXQmkJMbqxjPtY4ycHlkBe0A4AJaT7qrQ7dCpScHu+WoTvRPa9cagq7lBqothbNVS5ENWM+FyjPKxrsmPlaB1MfYBanxt7bHQu7c13oIOSy6kL62n5R0jnyPHj/wBTg8dgBIAOyDg6nBwMbaUOkNH1W72r309BJW07hQS1jxGylo8+aZxdgN5yOhP3ACDh5UcuGHa2bdTc6ltdRFJ9R0OKq7StyB4IPSMOHZzz5R1zjmcPdXauPfdSEOp9oNNPjioaNscl3ELQGZbgw04x0AaAHkY78g6cpCDE8c22m4NRrOq3Hc/690w+COOGWlbn6uhaMhj29TyElzvEGQS455cgKLC7tw7cR+odtPDsN+ZPf9Iu8ho3uBmpGnuYS7py/wDTceU+hbkk9S3O4fNFbpaafuHsNX0IklBdLaI3COCR4GSxoOPZ5evuOw3qPcHUhDdTA4FdkJp62DdPVdCWU0PmsNPKOsj+oNSW/sj7me5y7phpPp4aOFK4VVxh1RupQmkoYH81NZJDmSocD0dPj3Y/8Hd3rgdHTaijjiiZFExscbGhrWtGA0DsAPQIPJERAREQEREBERAREQEREBERAREQEREBERBjNU2Cy6osNVYdQ22nuVsq2hs9PO3LXYIIPxBBAII6ggEdVEndjgva6SW4baXxsYJLvqy6OOB8mTAE/IBwPzcpkogqn1dtHunoapE940feqMQO8RtZTRmaJhach3ixczWnpkdQVMC5Mg4m+E1lTTxxzart7OdrGlrS24wt8zOpAAlaemTgeI0n3VJheEUMMT5HxxRsdIeZ5a0AuOMZPxOAgjVRQ2vhV4aZamUU02r7mASD5vHrnt8rfnFCO/UA8ruxeoM0tDqbWN9qp6K33S/XSrmdPUGmp3zyySPcS5xDQTkkkq3G52m1XN0TrlbKKtMJJiNRA2TkJxnl5gcZwO3wX000EFNCIaaGOGNvZkbQ1o/IIK6tuuE7dTU8sU15pKfS1vdgulr3h03L/hhYSc/J5YpjbCbHaV2hpqmSz1Vwr7nWxtjrKyolIbIAcgNib5GgHOCcuGSObBXU0QEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/2Q==" alt="TSI Logo">
+        <div class="ft-brand-name">Tri Stone Industries<small>Pvt. Ltd.</small></div>
+      </div>
+      <p>Premium technology partner for businesses across India. Software, hardware, and digital services from Tiruchirappalli since 2021.</p>
+      <p style="font-size:.72rem;color:rgba(255,255,255,0.3);font-family:var(--font-m);line-height:1.8">
+        Nasha Residence, No: 22, Andal Nagar<br>Ariyamangalam, Tiruchirappalli, TN 620010<br>
+        GST: 33AAJCT1234F1Z5 &nbsp;|&nbsp; CIN: U72900TN2019PTC128456
+      </p>
+    </div>
+    <div>
+      <div class="ft-col-title">Quick Links</div>
+      <div class="ft-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="what-we-do.html">Services</a>
+        <a href="what-we-think.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Services</div>
+      <div class="ft-links">
+        <a href="service-web.html">Web Development</a>
+        <a href="service-app.html">App Development</a>
+        <a href="service-software.html">Software Dev</a>
+        <a href="service-marketing.html">Digital Marketing</a>
+        <a href="service-iot.html">IoT Solutions</a>
+        <a href="service-cloud.html">Cloud Solutions</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Legal</div>
+      <div class="ft-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <div style="margin-top:1.5rem">
+        <div class="ft-col-title">Newsletter</div>
+        <p style="color:rgba(255,255,255,0.4);font-size:.78rem;line-height:1.6;margin-bottom:.85rem">Insights on tech &amp; innovation. No spam.</p>
+        <div class="nl-form">
+          <input type="email" placeholder="Your email" id="nl-email"/>
+          <button onclick="nlSubmit()">Join</button>
+        </div>
+        <div id="nl-msg" style="display:none;color:#4ade80;font-size:.75rem;margin-top:.5rem;font-family:var(--font-m)">&#10003; Subscribed!</div>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Contact</div>
+      <div class="ft-contact-item"><i class="ri-phone-line"></i><span>+91 80720 89889<br>+91 70107 05106</span></div>
+      <div class="ft-contact-item"><i class="ri-mail-line"></i><span>info@tristoneindustries.com</span></div>
+      <div class="ft-contact-item"><i class="ri-time-line"></i><span>Mon–Sat: 9:00 AM – 6:30 PM<br>Response within 24 hrs</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Tri Stone Industries Pvt. Ltd. All rights reserved.</div>
+    <div style="display:flex;gap:1.25rem"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+    <div style="font-family:var(--font-m);font-size:.7rem">Made in Tiruchirappalli 🇮🇳</div>
+  </div>
+</footer>
+<button class="ai-fab" id="aifab" title="Chat with TSI Assistant"><i class="ri-robot-line"></i></button>
+<div class="ai-win" id="aiwin">
+  <div class="ai-head"><div class="ai-head-l"><div class="ai-av"><i class="ri-robot-line"></i></div><div><div class="ai-hname">TSI Assistant</div><div class="ai-hstatus">&#9679; Online</div></div></div><button class="ai-x" id="aix"><i class="ri-close-line"></i></button></div>
+  <div class="ai-msgs" id="aimsgs"><div class="ai-msg bot">Hi! I'm TSI's AI assistant. Ask me anything about our services, pricing, technologies, or how to get started.</div></div>
+  <div class="ai-suggs">
+    <button class="ai-sug" onclick="askAI('What services do you offer?')">Services</button>
+    <button class="ai-sug" onclick="askAI('How long does a project take?')">Timeline</button>
+    <button class="ai-sug" onclick="askAI('How do I contact you?')">Contact</button>
+    <button class="ai-sug" onclick="askAI('Tell me about your tech stack')">Tech</button>
+  </div>
+  <div class="ai-inp-wrap"><input class="ai-inp" id="aiinp" placeholder="Ask anything..."/><button class="ai-send" onclick="sendAI()"><i class="ri-send-plane-fill"></i></button></div>
+</div>
+<script>
+// Cursor
+const cur=document.getElementById('cur'),curR=document.getElementById('cur-r');
+if(cur){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});(function a(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(a)})();document.querySelectorAll('a,button,.card,.serv-card,.t-card,.b-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'))});}
+// Scroll
+window.addEventListener('scroll',()=>{const sp=document.getElementById('sp');if(sp)sp.style.width=(window.scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';const nav=document.getElementById('nav');if(nav)nav.classList.toggle('scrolled',scrollY>50);});
+// Hamburger
+const hbg=document.getElementById('hbg'),nmob=document.getElementById('nmob');
+if(hbg)hbg.addEventListener('click',function(){this.classList.toggle('open');nmob.classList.toggle('open')});
+// Reveal
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08}).observe||(()=>{});
+document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08}).observe(r));
+// Count-up
+document.querySelectorAll('.cu').forEach(el=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=+el.dataset.t;let c=0;const s=t/55,ti=setInterval(()=>{c=Math.min(c+s,t);el.textContent=Math.floor(c);if(c>=t)clearInterval(ti)},22);new IntersectionObserver(()=>{}).observe(el)}}),{threshold:.5}).observe(el));
+// Newsletter
+function nlSubmit(){const e=document.getElementById('nl-email');if(!e||!e.value.includes('@'))return;e.value='';const m=document.getElementById('nl-msg');if(m){m.style.display='block';setTimeout(()=>m.style.display='none',4000)}}
+// AI
+const KB={'service|offer|what do you':'We offer two pillars: SOFTWARE (Web Development, Mobile Apps, Digital Marketing, ERP for Business & Education, Cloud) and HARDWARE (IoT, PCB Design, Robotics, Embedded Systems, Battery/Energy, Industrial Automation).','contact|reach|email|phone|number':'Email: info@tristoneindustries.com | Phone: +91 80720 89889 / +91 70107 05106 | Address: Nasha Residence, No.22, Andal Nagar, Tiruchirappalli, Tamil Nadu 620010','time|long|duration|week|deliver':'Websites: 2-4 weeks | Mobile Apps: 6-12 weeks | ERP/Software: 8-20 weeks | PCB Design: 3-6 weeks. We always define milestones upfront.','price|cost|budget|quote|how much':'Pricing depends on scope and complexity. Contact us for a free consultation — no obligations. Call +91 80720 89889.','iot|pcb|hardware|robot|embedded|sensor|circuit':'Our Hardware division covers IoT, PCB design, robotics, embedded systems, battery management and industrial automation. Trusted by JSW, DAIKIN, Aditi Solar and more.','location|where|address|trichy|tiruchirappalli|office':'Nasha Residence, No: 22, Andal Nagar, Ariyamangalam, Tiruchirappalli, Tamil Nadu 620010. Call: +91 80720 89889.','about|company|who|team|founded|history|gst|cin':'Tri Stone Industries Pvt. Ltd. founded 2021. 30+ team members. 200+ projects. 150+ clients. CIN: U72900TN2019PTC128456 | GST: 33AAJCT1234F1Z5.','web|website|develop':'We build corporate sites, e-commerce, ERP portals, CRM dashboards, landing pages — all SEO-optimised and mobile-first. React, Next.js, Node.js stack.','app|mobile|android|ios|flutter':'We develop iOS, Android, and cross-platform apps using Flutter and React Native. From fintech to food delivery.','cloud|aws|azure|devops|hosting':'AWS, Azure and GCP solutions — cloud migration, DevOps pipelines, security, backup and disaster recovery.','marketing|seo|ads|social|digital':'SEO, Google Ads, Meta Ads, content marketing, branding, lead generation — all data-driven campaigns.','erp|crm|inventory|hr|software|custom':'Custom ERP, CRM, HR management, inventory, accounting, and SaaS platforms for all industries.'};
+function matchKB(q){q=q.toLowerCase();for(const[k,v]of Object.entries(KB)){if(k.split('|').some(w=>q.includes(w)))return v;}return "Great question! Please reach out to us at info@tristoneindustries.com or call +91 80720 89889 for a free consultation. We respond within 24 hours.";}
+document.getElementById('aifab').onclick=()=>document.getElementById('aiwin').classList.toggle('open');
+document.getElementById('aix').onclick=()=>document.getElementById('aiwin').classList.remove('open');
+function addMsg(t,tp){const m=document.getElementById('aimsgs'),d=document.createElement('div');d.className='ai-msg '+tp;d.innerHTML=t.replace(/\n/g,'<br>');m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function askAI(q){addMsg(q,'user');const m=document.getElementById('aimsgs'),ty=document.createElement('div');ty.className='ai-typing';ty.innerHTML='<span></span><span></span><span></span>';m.appendChild(ty);m.scrollTop=m.scrollHeight;setTimeout(()=>{ty.remove();addMsg(matchKB(q),'bot')},700+Math.random()*500);}
+function sendAI(){const i=document.getElementById('aiinp');if(!i.value.trim())return;const q=i.value.trim();i.value='';askAI(q);}
+document.getElementById('aiinp').addEventListener('keydown',e=>{if(e.key==='Enter')sendAI()});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ══════════ TSI 3D BANNER — PCB board + copper traces ══════════ */
+(function(){
+if(typeof THREE==='undefined')return;
+var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var isMobile=innerWidth<900;
+var ph=document.querySelector('.ph');if(!ph)return;
+var c=document.createElement('canvas');
+c.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:block;';
+ph.insertBefore(c,ph.firstChild);
+var renderer=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:!isMobile,powerPreference:'default',failIfMajorPerformanceCaveat:false});
+renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?2:1.5));
+var scene=new THREE.Scene();
+var cam=new THREE.PerspectiveCamera(55,1,.1,100);cam.position.z=24;
+scene.add(new THREE.AmbientLight(0xffffff,.95));
+var dl=new THREE.DirectionalLight(0xffffff,.55);dl.position.set(8,14,10);scene.add(dl);
+var BLUE=0x1d4ed8,PURPLE=0x6d28d9,SKY=0x3b82f6,LIGHT=0x60a5fa,GREEN=0x16a34a,ORANGE=0xea580c,GOLD=0xd4a017;
+function mat(c2){return new THREE.MeshLambertMaterial({color:c2,flatShading:true})}
+function glow(c2,o){return new THREE.MeshBasicMaterial({color:c2,transparent:o!==undefined,opacity:o===undefined?1:o})}
+function wire(g,c2,o){return new THREE.LineSegments(new THREE.WireframeGeometry(g),new THREE.LineBasicMaterial({color:c2,transparent:true,opacity:o}))}
+var world=new THREE.Group();scene.add(world);
+var hub=new THREE.Group();hub.position.set(isMobile?0:13,isMobile?-2.5:0,-3);
+if(isMobile)hub.scale.setScalar(.72);
+world.add(hub);
+
+var board=new THREE.Group();hub.add(board);
+var pcb=new THREE.Mesh(new THREE.BoxGeometry(7,5,.18),mat(0x166534));pcb.material.opacity=.92;pcb.material.transparent=true;board.add(pcb);
+board.add(wire(new THREE.BoxGeometry(7,5,.18),GREEN,.4));
+/* copper traces */
+var tg=[],pts=[[-3,2,-3,-1,-1,-1,-1,1.5],[3,-2,1,-1,1,1.5,-2,1.5],[-3,-2,0,-2,0,0,2.5,0],[3,1.5,1,1.5,1,-1,2.8,-1]];
+pts.forEach(function(p){for(var k=0;k<p.length-2;k+=2)tg.push(p[k],p[k+1],.1,p[k+2],p[k+3],.1)});
+var tG=new THREE.BufferGeometry();tG.setAttribute('position',new THREE.Float32BufferAttribute(tg,3));
+board.add(new THREE.LineSegments(tG,new THREE.LineBasicMaterial({color:GOLD,transparent:true,opacity:.7})));
+/* chips */
+var chips=[];var cdef=[[-1,.4,.9,.9,0x0f172a],[1.6,-1,1.3,.8,PURPLE],[-2,-1.3,.7,.7,0x0f172a]];
+cdef.forEach(function(d){
+  var ch=new THREE.Mesh(new THREE.BoxGeometry(d[2],d[3],.35),mat(d[4]));ch.position.set(d[0],d[1],.22);
+  ch.add(wire(new THREE.BoxGeometry(d[2],d[3],.35),SKY,.5));board.add(ch);chips.push(ch);
+});
+/* solder pads (gold dots) */
+for(var i=0;i<14;i++){
+  var pad=new THREE.Mesh(new THREE.CircleGeometry(.1,8),glow(GOLD));
+  pad.position.set((Math.random()-.5)*6,(Math.random()-.5)*4,.11);board.add(pad);
+}
+board.rotation.x=-.5;
+
+var N=isMobile?90:170,pos=new Float32Array(N*3);
+for(var i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*56;pos[i*3+1]=(Math.random()-.5)*22;pos[i*3+2]=(Math.random()-.5)*20-3}
+var dustG=new THREE.BufferGeometry();dustG.setAttribute('position',new THREE.BufferAttribute(pos,3));
+world.add(new THREE.Points(dustG,new THREE.PointsMaterial({color:BLUE,size:.11,transparent:true,opacity:.4})));
+var tx=0,cx=0;
+ph.addEventListener('mousemove',function(e){var r=ph.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2});
+ph.addEventListener('mouseleave',function(){tx=0});
+function resize(){var w=ph.offsetWidth||innerWidth,h=ph.offsetHeight||300;if(w<10)return;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+var _bt;function onR(){clearTimeout(_bt);_bt=setTimeout(resize,120)}
+resize();addEventListener('resize',onR);addEventListener('orientationchange',function(){setTimeout(resize,300)});setTimeout(resize,500);
+var visible=true,clock=new THREE.Clock();
+if('IntersectionObserver' in window)new IntersectionObserver(function(en){visible=en[0].isIntersecting},{threshold:.02}).observe(ph);
+(function loop(){
+  requestAnimationFrame(loop);if(!visible)return;
+  var t=clock.getElapsedTime();
+  if(!reduced){
+
+    board.rotation.z=Math.sin(t*.3)*.1;
+    board.rotation.y=Math.sin(t*.4)*.25;
+    chips.forEach(function(ch,i){ch.position.z=.22+Math.sin(t*2+i)*.04});
+
+  }
+  cx+=(tx-cx)*.05;world.rotation.y=cx*.1;
+  renderer.render(scene,cam);
+})();
+})();
+</script>
+
+</body>
+</html>
